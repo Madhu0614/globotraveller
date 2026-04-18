@@ -34,7 +34,7 @@ function Index() {
       <TripGrid eyebrow="Upcoming" title="Featured trips this season" limit={4} />
       <TripGrid category="weekend" eyebrow="Quick getaways" title="Weekend escapes" subtitle="Friday flight out, Monday morning back." limit={4} />
       <TripGrid category="backpacking" eyebrow="For wanderers" title="Backpacking adventures" subtitle="Budget-friendly, friend-filled journeys." limit={4} />
-      <TripGrid category="weekend" eyebrow="More weekends" title="More weekend getaways" subtitle="Extended weekend explorations." limit={4} />
+      <TripGrid category="weekend" eyebrow="Quick getaways" title="Weekend escapes" subtitle="Friday flight out, Monday morning back." limit={4} />
       <WhyUs />
       <Community />
       <Testimonials />
