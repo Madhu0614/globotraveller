@@ -6,6 +6,20 @@ import meghalaya from "@/assets/trip-meghalaya.jpg";
 import ladakh from "@/assets/trip-ladakh.jpg";
 import thailand from "@/assets/trip-thailand.jpg";
 import goa from "@/assets/trip-goa.jpg";
+import anathagiri from "@/assets/ananthagiri_hills_camping.jpg";
+import wayanad from "@/assets/Wayanad_Hill_Station.avif";
+import ooty from "@/assets/Ooty_Coonoor.jpg";
+import isha from "@/assets/Isha_Ooty.jpg";
+import coorg from "@/assets/Coorg_Chikmagalur.jpg";
+import araku from "@/assets/Araku_Valley_Hill_Station.avif";
+import pondicherry from "@/assets/Pondicherry_Beach.jpg";
+import arunachalam from "@/assets/Arunachalam.jpeg";
+import lonavala from "@/assets/Lonavala_Hill_Station.jpg";
+import rajmachi from "@/assets/Rajmachi_Visapur.jpg";
+import andharban from "@/assets/Andharban.jpeg";
+import rajasthan from "@/assets/Rajasthan_Desert.jpg";
+import sikkim from "@/assets/Sikkim.jpg";
+import udupi from "@/assets/Udupi_Beach.webp";
 
 export type TripCategory = "weekend" | "backpacking";
 
@@ -118,7 +132,7 @@ export const trips: Trip[] = [
     title: "Wayanad Hill Station Weekend",
     location: "Kerala",
     country: "India",
-    image: meghalaya,
+    image: wayanad,
     gallery: [meghalaya, kashmir, spiti],
     durationDays: 3,
     durationNights: 2,
@@ -152,7 +166,7 @@ export const trips: Trip[] = [
     title: "Ooty & Coonoor Weekend",
     location: "Tamil Nadu",
     country: "India",
-    image: ladakh,
+    image: ooty,
     gallery: [ladakh, meghalaya, manali],
     durationDays: 3,
     durationNights: 2,
@@ -186,7 +200,7 @@ export const trips: Trip[] = [
     title: "Isha & Ooty Spiritual Retreat",
     location: "Tamil Nadu",
     country: "India",
-    image: manali,
+    image: isha,
     gallery: [manali, meghalaya, ladakh],
     durationDays: 4,
     durationNights: 3,
@@ -221,7 +235,7 @@ export const trips: Trip[] = [
     title: "Coorg & Chikmagalur Coffee Trail",
     location: "Karnataka",
     country: "India",
-    image: bali,
+    image: coorg,
     gallery: [bali, meghalaya, kashmir],
     durationDays: 3,
     durationNights: 2,
@@ -255,7 +269,7 @@ export const trips: Trip[] = [
     title: "Araku Valley Hill Station",
     location: "Andhra Pradesh",
     country: "India",
-    image: meghalaya,
+    image: araku,
     gallery: [meghalaya, ladakh, spiti],
     durationDays: 3,
     durationNights: 2,
@@ -289,7 +303,7 @@ export const trips: Trip[] = [
     title: "Pondicherry Beach Getaway",
     location: "Tamil Nadu",
     country: "India",
-    image: goa,
+    image: pondicherry,
     gallery: [goa, bali, thailand],
     durationDays: 3,
     durationNights: 2,
@@ -323,7 +337,7 @@ export const trips: Trip[] = [
     title: "Arunachalam & Pondicherry Spiritual Tour",
     location: "Tamil Nadu",
     country: "India",
-    image: kashmir,
+    image: arunachalam,
     gallery: [kashmir, meghalaya, manali],
     durationDays: 4,
     durationNights: 3,
@@ -358,7 +372,7 @@ export const trips: Trip[] = [
     title: "Lonavala Hill Station Escape",
     location: "Maharashtra",
     country: "India",
-    image: manali,
+    image: lonavala,
     gallery: [manali, meghalaya, ladakh],
     durationDays: 3,
     durationNights: 2,
@@ -392,7 +406,7 @@ export const trips: Trip[] = [
     title: "Rajmachi & Visapur Fort Trek",
     location: "Maharashtra",
     country: "India",
-    image: spiti,
+    image: rajmachi,
     gallery: [spiti, ladakh, kashmir],
     durationDays: 2,
     durationNights: 1,
@@ -425,7 +439,7 @@ export const trips: Trip[] = [
     title: "Gokarna & Hampi Cultural Trail",
     location: "Karnataka",
     country: "India",
-    image: bali,
+    image: goa,
     gallery: [bali, goa, meghalaya],
     durationDays: 4,
     durationNights: 3,
@@ -460,7 +474,7 @@ export const trips: Trip[] = [
     title: "Gokarna & Udupi Beach Combo",
     location: "Karnataka",
     country: "India",
-    image: goa,
+    image: udupi,
     gallery: [goa, bali, thailand],
     durationDays: 3,
     durationNights: 2,
@@ -494,7 +508,7 @@ export const trips: Trip[] = [
     title: "Andharban & Devkund Waterfall Trek",
     location: "Maharashtra",
     country: "India",
-    image: manali,
+    image: andharban,
     gallery: [manali, meghalaya, spiti],
     durationDays: 2,
     durationNights: 1,
@@ -527,7 +541,7 @@ export const trips: Trip[] = [
     title: "Anathagiri Camping Escape",
     location: "Telangana",
     country: "India",
-    image: meghalaya,
+    image: anathagiri,
     gallery: [meghalaya, spiti, ladakh],
     durationDays: 2,
     durationNights: 1,
@@ -676,7 +690,7 @@ export const trips: Trip[] = [
     title: "Rajasthan Desert Backpacking",
     location: "Rajasthan",
     country: "India",
-    image: kashmir,
+    image: rajasthan,
     gallery: [kashmir, spiti, meghalaya],
     durationDays: 10,
     durationNights: 9,
@@ -834,7 +848,7 @@ export const trips: Trip[] = [
     title: "Sikkim & Gangtok Backpacking",
     location: "Sikkim",
     country: "India",
-    image: ladakh,
+    image: sikkim,
     gallery: [ladakh, meghalaya, kashmir],
     durationDays: 8,
     durationNights: 7,
