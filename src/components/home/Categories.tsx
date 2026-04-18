@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { Mountain, Plane, Tent, Waves, MapPinned } from "lucide-react";
+import { Mountain, Plane, Tent, Waves, MapPinned, Backpack } from "lucide-react";
 
 const cats = [
   { slug: "weekend", label: "Weekend Getaways", icon: MapPinned, hue: "from-sky/30 to-primary-soft" },
-  { slug: "international", label: "International", icon: Plane, hue: "from-warm/40 to-primary-soft" },
+  { slug: "backpacking", label: "Backpacking", icon: Backpack, hue: "from-orange/30 to-primary-soft" },
   { slug: "trekking", label: "Treks & Adventure", icon: Tent, hue: "from-success/25 to-primary-soft" },
   { slug: "himalayan", label: "Himalayan Circuits", icon: Mountain, hue: "from-primary/15 to-primary-soft" },
   { slug: "beach", label: "Beach & Islands", icon: Waves, hue: "from-teal/30 to-primary-soft" },
+  { slug: "international", label: "International", icon: Plane, hue: "from-warm/40 to-primary-soft" },
 ];
 
 export function Categories() {
