@@ -14,9 +14,9 @@ interface TripGridProps {
 export function TripGrid({ category, title, subtitle, eyebrow, limit = 4, featured = false }: TripGridProps) {
   let filtered;
   if (featured) {
-    // For featured section, show mix of best trips excluding gokarna-jogfalls and including anathagiri
+    // For featured section, show mix of best trips excluding gokarna-jogfalls and wayanad, including anathagiri
     const weekend = trips
-      .filter((t) => t.category === "weekend" && t.slug !== "gokarna-jogfalls")
+      .filter((t) => t.category === "weekend" && t.slug !== "gokarna-jogfalls" && t.slug !== "wayanad")
       .slice(0, Math.ceil(limit / 2));
     const backpacking = trips.filter((t) => t.category === "backpacking").slice(0, Math.floor(limit / 2));
     filtered = [...weekend, ...backpacking].slice(0, limit);
