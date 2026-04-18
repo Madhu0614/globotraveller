@@ -33,8 +33,10 @@ function Index() {
       <Categories />
       <TripGrid eyebrow="Upcoming" title="Featured trips this season" limit={4} />
       <TripGrid category="weekend" eyebrow="Quick getaways" title="Weekend escapes" subtitle="Friday flight out, Monday morning back." limit={4} />
+      <TripGrid category="backpacking" eyebrow="For wanderers" title="Backpacking adventures" subtitle="Budget-friendly, friend-filled journeys." limit={4} />
+      <TripGrid category="himalayan" eyebrow="High altitude" title="Himalayan circuits" subtitle="Mountains, monasteries & meditation." limit={4} />
       <TripGrid category="international" eyebrow="Passport ready" title="International adventures" limit={4} />
-      <TripGrid category="trekking" eyebrow="For the brave" title="Treks & high-altitude circuits" limit={4} />
+      <TripGrid category="trekking" eyebrow="For the brave" title="Treks & alpine experiences" limit={4} />
       <WhyUs />
       <Community />
       <Testimonials />
