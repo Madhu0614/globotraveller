@@ -523,7 +523,7 @@ export const trips: Trip[] = [
     ],
   },
   {
-    slug: "anathagiri-camping",
+    slug: "ananthagiri_hills_camping",
     title: "Anathagiri Camping Escape",
     location: "Telangana",
     country: "India",
