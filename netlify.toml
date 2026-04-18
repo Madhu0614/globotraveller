@@ -1,11 +1,14 @@
 [build]
 command = "npm run build"
 publish = "dist/client"
+functions = "netlify/functions"
+
+[functions]
+node_bundler = "esbuild"
+external_node_modules = ["@tanstack/react-start"]
 
 [[redirects]]
 from = "/*"
 to = "/.netlify/functions/server"
 status = 200
-
-[functions]
-node_bundler = "esbuild"
+force = true
