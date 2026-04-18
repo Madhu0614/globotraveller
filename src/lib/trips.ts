@@ -20,6 +20,11 @@ import andharban from "@/assets/Andharban.jpeg";
 import rajasthan from "@/assets/Rajasthan_Desert.jpg";
 import sikkim from "@/assets/Sikkim.jpg";
 import udupi from "@/assets/Udupi_Beach.webp";
+import gokarnaD from "@/assets/Gokarna_Dandeli_Weekend.jpg";
+import gokarnaJ from "@/assets/Gokarna_Jog+Falls+Weekend.webp";
+import gokarnaH from "@/assets/Gokarna_Hampi_Cultural_Trail.jpg";
+import goaBackpack from "@/assets/Goa_Backpacking_Paradise.jpg";
+import goaCombo from "@/assets/Goa_Gokarna_Dandeli.jpg";
 
 export type TripCategory = "weekend" | "backpacking";
 
@@ -64,7 +69,7 @@ export const trips: Trip[] = [
     title: "Gokarna & Dandeli Weekend",
     location: "Karnataka",
     country: "India",
-    image: goa,
+    image: gokarnaD,
     gallery: [goa, bali, meghalaya],
     durationDays: 3,
     durationNights: 2,
@@ -98,7 +103,7 @@ export const trips: Trip[] = [
     title: "Gokarna & Jog Falls Weekend",
     location: "Karnataka",
     country: "India",
-    image: goa,
+    image: gokarnaJ,
     gallery: [goa, bali, meghalaya],
     durationDays: 3,
     durationNights: 2,
@@ -439,7 +444,7 @@ export const trips: Trip[] = [
     title: "Gokarna & Hampi Cultural Trail",
     location: "Karnataka",
     country: "India",
-    image: goa,
+    image: gokarnaH,
     gallery: [bali, goa, meghalaya],
     durationDays: 4,
     durationNights: 3,
@@ -810,7 +815,7 @@ export const trips: Trip[] = [
     title: "Goa Backpacking Paradise",
     location: "Goa",
     country: "India",
-    image: goa,
+    image: goaBackpack,
     gallery: [goa, bali, thailand],
     durationDays: 7,
     durationNights: 6,
@@ -887,7 +892,7 @@ export const trips: Trip[] = [
     title: "Goa, Gokarna & Dandeli Adventure",
     location: "Goa & Karnataka",
     country: "India",
-    image: goa,
+    image: goaCombo,
     gallery: [goa, bali, meghalaya],
     durationDays: 8,
     durationNights: 7,
