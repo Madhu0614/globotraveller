@@ -7,7 +7,7 @@ import ladakh from "@/assets/trip-ladakh.jpg";
 import thailand from "@/assets/trip-thailand.jpg";
 import goa from "@/assets/trip-goa.jpg";
 
-export type TripCategory = "weekend" | "international" | "trekking" | "himalayan" | "beach";
+export type TripCategory = "weekend" | "backpacking" | "trekking" | "himalayan" | "beach" | "international";
 
 export interface Departure {
   date: string;
@@ -44,53 +44,39 @@ export interface Trip {
 }
 
 export const trips: Trip[] = [
+  // WEEKEND TRIPS
   {
-    slug: "manali-kasol-weekend",
-    title: "Manali Kasol Weekend Escape",
-    location: "Himachal Pradesh",
+    slug: "gokarna-dandeli",
+    title: "Gokarna & Dandeli Weekend",
+    location: "Karnataka",
     country: "India",
-    image: manali,
-    gallery: [manali, spiti, ladakh],
-    durationDays: 4,
-    durationNights: 3,
-    price: 8499,
-    originalPrice: 10999,
-    rating: 4.8,
-    reviews: 1284,
+    image: goa,
+    gallery: [goa, bali, thailand],
+    durationDays: 3,
+    durationNights: 2,
+    price: 5999,
+    rating: 4.7,
+    reviews: 456,
     groupSize: "15–25",
     difficulty: "Easy",
     category: "weekend",
-    departureCities: ["Delhi", "Chandigarh"],
-    pickup: "Delhi ISBT, Kashmere Gate",
-    drop: "Delhi ISBT, Kashmere Gate",
-    months: ["Mar", "Apr", "May", "Jun", "Sep", "Oct"],
-    tagline: "Pine forests, riverside cafes, and starlit nights",
-    description:
-      "A perfect weekend reset through Old Manali, Kasol, and the buzzing Parvati valley. Bonfires, jam sessions, and curated stays included.",
-    highlights: [
-      "Volvo journeys both sides",
-      "Stay in boutique mountain cottages",
-      "Bonfire night with live music",
-      "Visit to Kheerganga base",
-    ],
-    inclusions: [
-      "3 nights stay (twin/triple share)",
-      "Daily breakfast & dinner",
-      "All transfers in tempo traveller",
-      "Trip captain throughout",
-      "Permits & taxes",
-    ],
-    exclusions: ["Lunch", "Personal expenses", "Anything not in inclusions"],
+    departureCities: ["Bangalore", "Goa"],
+    pickup: "Gokarna Beach",
+    drop: "Gokarna Beach",
+    months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
+    tagline: "Beach vibes & river adventures",
+    description: "A perfect blend of serene beaches in Gokarna and thrilling water sports in Dandeli.",
+    highlights: ["Gokarna beach walks", "Dandeli river rafting", "Local beach shacks", "Sunset viewpoints"],
+    inclusions: ["2 nights stay", "Breakfast & dinner", "All transfers", "Activity entries"],
+    exclusions: ["Lunch", "Personal expenses"],
     itinerary: [
-      { day: 1, title: "Delhi → Manali", details: "Overnight Volvo to Manali. Sleeper seats." },
-      { day: 2, title: "Manali sightseeing", details: "Solang valley, Hadimba temple, Mall road." },
-      { day: 3, title: "Kasol & Chalal", details: "River walk to Chalal, cafe hopping in Kasol." },
-      { day: 4, title: "Kasol → Delhi", details: "Overnight return. Drop in the morning." },
+      { day: 1, title: "Arrival in Gokarna", details: "Check-in & beach exploration." },
+      { day: 2, title: "Dandeli adventure", details: "River rafting & local sightseeing." },
+      { day: 3, title: "Departure", details: "Beach time & departure." },
     ],
     departures: [
-      { date: "10 May 2026", spotsLeft: 6 },
-      { date: "17 May 2026", spotsLeft: 12 },
-      { date: "24 May 2026", spotsLeft: 18 },
+      { date: "15 May 2026", spotsLeft: 8 },
+      { date: "22 May 2026", spotsLeft: 12 },
     ],
   },
   {
