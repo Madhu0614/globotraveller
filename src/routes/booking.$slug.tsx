@@ -112,7 +112,7 @@ function BookingPage() {
                 <h2 className="font-display text-lg font-bold">Traveller details</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Field label="Full name"><Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Aarav Sharma" /></Field>
-                  <Field label="Phone"><Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 99999 99999" /></Field>
+                  <Field label="Phone"><Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 7975550990" /></Field>
                   <Field label="Email"><Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" /></Field>
                   <Field label="Number of travellers">
                     <div className="flex items-center gap-2">

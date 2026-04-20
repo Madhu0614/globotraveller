@@ -37,7 +37,7 @@ function Contact() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name"><Input required placeholder="Your full name" /></Field>
-              <Field label="Phone"><Input required placeholder="+91 99999 99999" /></Field>
+              <Field label="Phone"><Input required placeholder="+91 7975550990" /></Field>
               <Field label="Email"><Input required type="email" placeholder="you@email.com" /></Field>
               <Field label="Interested in">
                 <select className="h-10 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none focus:border-primary">
@@ -55,11 +55,11 @@ function Contact() {
           </form>
 
           <aside className="space-y-3">
-            <ContactCard icon={Phone} title="Call us" text="+91 99999 99999" />
+            <ContactCard icon={Phone} title="Call us" text="+91 7975550990" />
             <ContactCard icon={Mail} title="Email" text="hello@globotraveller.in" />
             <ContactCard icon={MapPin} title="Office" text="Indiranagar, Bengaluru" />
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="flex items-center gap-3 rounded-2xl bg-[var(--whatsapp)] p-4 text-white shadow-soft"
             >
               <MessageCircle className="h-5 w-5" />

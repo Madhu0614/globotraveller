@@ -240,7 +240,7 @@ function TripDetail() {
               <Link to="/booking/$slug" params={{ slug: trip.slug }}>Book Now</Link>
             </Button>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="mt-2 flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)]"
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
@@ -266,7 +266,7 @@ function TripDetail() {
             </p>
           </div>
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/917975550990"
             className="grid h-11 w-11 place-items-center rounded-full bg-[var(--whatsapp)] text-white"
             aria-label="WhatsApp"
           >

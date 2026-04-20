@@ -56,7 +56,7 @@ function ConfirmationPage() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--whatsapp)] px-4 py-3 text-sm font-semibold text-white"
             >
               <MessageCircle className="h-4 w-4" /> Chat with trip captain

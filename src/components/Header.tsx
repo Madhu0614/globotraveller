@@ -131,7 +131,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://wa.me/919999999999?text=Hi%20Globo%20Traveller%2C%20I%20have%20a%20question"
+            href="https://wa.me/917975550990"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1.5 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground/80 transition hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)] sm:inline-flex"
@@ -207,7 +207,7 @@ export function Header() {
                 </Button>
 
                 <a
-                  href="https://wa.me/919999999999"
+                  href="https://wa.me/917975550990"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground"

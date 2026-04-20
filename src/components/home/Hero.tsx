@@ -77,7 +77,7 @@ export function Hero() {
               </Link>
             </Button>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20 hover:scale-[1.03]"
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp

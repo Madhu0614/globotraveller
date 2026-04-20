@@ -57,7 +57,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 text-primary" />
-                <span>+91 99999 99999</span>
+                <span>+91 7975550990</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 text-primary" />
@@ -69,7 +69,7 @@ export function Footer() {
               </li>
             </ul>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--whatsapp)] px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:opacity-90"
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp us

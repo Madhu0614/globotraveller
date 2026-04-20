@@ -26,7 +26,7 @@ export function Community() {
               </Link>
             </Button>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/917975550990"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/10"
             >
               Plan a custom trip
