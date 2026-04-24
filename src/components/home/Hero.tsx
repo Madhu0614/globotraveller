@@ -46,14 +46,14 @@ export function Hero() {
           </div>
         ))}
         {/* Premium gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,oklch(0.42_0.21_265/0.45),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/42 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgb(200_169_106_/_0.22),transparent_55%)]" />
         {/* Floating glow orbs */}
         <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-primary/30 blur-3xl animate-float" />
         <div className="pointer-events-none absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-warm/25 blur-3xl animate-float [animation-delay:-3s]" />
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24 lg:flex-row lg:items-center lg:gap-16">
+      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 pb-20 pt-28 md:px-8 md:pb-28 md:pt-32 lg:flex-row lg:items-center lg:gap-16 lg:pt-36">
         <div className="max-w-2xl text-white animate-fade-in-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-xs font-semibold backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-warm" />
@@ -61,7 +61,7 @@ export function Hero() {
           </span>
           <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4.2rem]">
             Explore More With{" "}
-            <span className="bg-gradient-to-r from-warm via-white to-sky bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
+            <span className="bg-gradient-to-r from-[#f5f3ee] via-[#c8a96a] to-[#ffffff] bg-clip-text text-transparent [text-shadow:0_12px_30px_rgba(17,17,17,0.18)] animate-shimmer bg-[length:200%_auto]">
               Globo Traveller
             </span>
           </h1>
@@ -98,7 +98,7 @@ export function Hero() {
                 <span className="text-[11px] font-medium text-muted-foreground">Google</span>
               </div>
             </div>
-            <div className="flex items-center gap-2.5 rounded-full border border-white/20 bg-gradient-to-r from-[#feda75] via-[#d62976] to-[#4f5bd5] px-4 py-2 text-white shadow-brand">
+            <div className="flex items-center gap-2.5 rounded-full border border-white/20 bg-gradient-to-r from-primary via-[#3b5130] to-[#2d3d2d] px-4 py-2 text-white shadow-brand">
               <Instagram className="h-4 w-4" />
               <span className="text-sm font-bold">250K+</span>
               <span className="text-[11px] font-semibold opacity-90">Followers</span>
@@ -148,7 +148,7 @@ export function Hero() {
             onClick={() => setActive(i)}
             aria-label={`Show slide ${i + 1}`}
             className={`h-1.5 rounded-full transition-all ${
-              i === active ? "w-8 bg-white" : "w-3 bg-white/40 hover:bg-white/60"
+              i === active ? "w-8 bg-primary" : "w-3 bg-[#9a9a9a] hover:bg-[#6b6b6b]"
             }`}
           />
         ))}

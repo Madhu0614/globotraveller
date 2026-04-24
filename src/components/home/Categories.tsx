@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Mountain, Plane, Tent, Waves, MapPinned, Backpack } from "lucide-react";
 
 const cats = [
-  { slug: "weekend", label: "Weekend Getaways", icon: MapPinned, hue: "from-sky/30 to-primary-soft" },
-  { slug: "backpacking", label: "Backpacking", icon: Backpack, hue: "from-orange/30 to-primary-soft" },
-  { slug: "trekking", label: "Treks & Adventure", icon: Tent, hue: "from-success/25 to-primary-soft" },
-  { slug: "himalayan", label: "Himalayan Circuits", icon: Mountain, hue: "from-primary/15 to-primary-soft" },
-  { slug: "beach", label: "Beach & Islands", icon: Waves, hue: "from-teal/30 to-primary-soft" },
-  { slug: "international", label: "International", icon: Plane, hue: "from-warm/40 to-primary-soft" },
+  { slug: "weekend", label: "Weekend Getaways", icon: MapPinned, hue: "from-primary/12 to-primary-soft" },
+  { slug: "backpacking", label: "Backpacking", icon: Backpack, hue: "from-[#2d3d2d]/16 to-primary-soft" },
+  { slug: "trekking", label: "Treks & Adventure", icon: Tent, hue: "from-[#3b5130]/18 to-primary-soft" },
+  { slug: "himalayan", label: "Himalayan Circuits", icon: Mountain, hue: "from-primary/20 to-primary-soft" },
+  { slug: "beach", label: "Beach & Islands", icon: Waves, hue: "from-[#eae8e1] to-primary-soft" },
+  { slug: "international", label: "International", icon: Plane, hue: "from-warm/28 to-primary-soft" },
 ];
 
 export function Categories() {

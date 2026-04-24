@@ -80,7 +80,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 md:flex-row md:items-center">
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Globo Traveller. Wander responsibly.</p>
           <div className="flex items-center gap-3 text-muted-foreground">
-            <a href="https://www.instagram.com/globotraveller.in?igsh=cnRqOHE3Zjk0c25o" aria-label="Instagram" className="transition hover:text-primary" target="_blank" rel="noopener noreferrer"><Instagram className="h-4 w-4" /></a>
+            <a href="https://www.instagram.com/globotraveller.in" aria-label="Instagram" className="transition hover:text-primary" target="_blank" rel="noopener noreferrer"><Instagram className="h-4 w-4" /></a>
             <a href="#" aria-label="YouTube" className="transition hover:text-primary"><Youtube className="h-4 w-4" /></a>
             <a href="#" aria-label="Facebook" className="transition hover:text-primary"><Facebook className="h-4 w-4" /></a>
           </div>

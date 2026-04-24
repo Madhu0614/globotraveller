@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import {
   Star,
   MapPin,
@@ -53,12 +54,12 @@ function TripDetail() {
   const { trip } = Route.useLoaderData() as { trip: Trip };
 
   return (
-    <div>
+    <div className="trip-scroll-page">
       {/* Hero */}
       <section className="relative">
-        <div className="relative h-[44vh] min-h-[320px] w-full overflow-hidden md:h-[58vh]">
+        <div className="relative h-[44vh] min-h-80 w-full overflow-hidden md:h-[58vh]">
           <img src={trip.image} alt={trip.title} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-background via-black/40 to-black/20" />
         </div>
         <div className="mx-auto -mt-24 max-w-7xl px-4 md:-mt-28 md:px-8">
           <div className="rounded-3xl border border-border bg-card p-5 shadow-brand md:p-7">
@@ -89,7 +90,8 @@ function TripDetail() {
 
       <div className="mx-auto mt-10 grid max-w-7xl gap-8 px-4 pb-32 md:px-8 lg:grid-cols-[1fr_360px] lg:pb-16">
         <div className="space-y-10">
-          <Section title="About this trip">
+          <Reveal>
+            <Section title="About this trip">
             <p className="text-foreground/85">{trip.description}</p>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {trip.highlights.map((h) => (
@@ -99,9 +101,11 @@ function TripDetail() {
                 </li>
               ))}
             </ul>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <Section title="Fixed departures">
+          <Reveal>
+            <Section title="Fixed departures">
             <div className="grid gap-3 sm:grid-cols-2">
               {trip.departures.map((d) => (
                 <div
@@ -120,9 +124,11 @@ function TripDetail() {
                 </div>
               ))}
             </div>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <Section title="Day-wise itinerary">
+          <Reveal>
+            <Section title="Day-wise itinerary">
             <ol className="space-y-3">
               {trip.itinerary.map((day) => (
                 <li key={day.day} className="rounded-2xl border border-border bg-card p-4">
@@ -138,10 +144,12 @@ function TripDetail() {
                 </li>
               ))}
             </ol>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <Section title="What's included">
+          <Reveal>
+            <div className="grid gap-6 md:grid-cols-2">
+              <Section title="What's included">
               <ul className="space-y-2">
                 {trip.inclusions.map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">
@@ -149,8 +157,8 @@ function TripDetail() {
                   </li>
                 ))}
               </ul>
-            </Section>
-            <Section title="Not included">
+              </Section>
+              <Section title="Not included">
               <ul className="space-y-2">
                 {trip.exclusions.map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -158,33 +166,41 @@ function TripDetail() {
                   </li>
                 ))}
               </ul>
-            </Section>
-          </div>
+              </Section>
+            </div>
+          </Reveal>
 
-          <Section title="Stay, transport & meals">
+          <Reveal>
+            <Section title="Stay, transport & meals">
             <div className="grid gap-3 sm:grid-cols-3">
               <InfoTile icon={Hotel} title="Stay" text="Curated boutique stays & camps" />
               <InfoTile icon={Bus} title="Transport" text="Tempo travellers & SUVs" />
               <InfoTile icon={Utensils} title="Meals" text="Daily breakfast & dinner" />
             </div>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <Section title="Pickup & drop">
+          <Reveal>
+            <Section title="Pickup & drop">
             <div className="grid gap-3 sm:grid-cols-2">
               <InfoTile icon={Compass} title="Pickup" text={trip.pickup} />
               <InfoTile icon={Compass} title="Drop" text={trip.drop} />
             </div>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <Section title="Gallery">
+          <Reveal>
+            <Section title="Gallery">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {trip.gallery.map((src, i) => (
                 <img key={i} src={src} alt="" loading="lazy" className="aspect-square w-full rounded-2xl object-cover" />
               ))}
             </div>
-          </Section>
+            </Section>
+          </Reveal>
 
-          <Section title="FAQ">
+          <Reveal>
+            <Section title="FAQ">
             <Accordion type="single" collapsible className="space-y-2">
               {faqs.slice(0, 4).map((f, i) => (
                 <AccordionItem
@@ -199,7 +215,8 @@ function TripDetail() {
                 </AccordionItem>
               ))}
             </Accordion>
-          </Section>
+            </Section>
+          </Reveal>
         </div>
 
         {/* Sticky booking card — desktop */}
@@ -241,7 +258,7 @@ function TripDetail() {
             </Button>
             <a
               href="https://wa.me/917975550990"
-              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)]"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold hover:border-whatsapp hover:text-whatsapp"
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
             </a>
@@ -267,7 +284,7 @@ function TripDetail() {
           </div>
           <a
             href="https://wa.me/917975550990"
-            className="grid h-11 w-11 place-items-center rounded-full bg-[var(--whatsapp)] text-white"
+            className="grid h-11 w-11 place-items-center rounded-full bg-whatsapp text-white"
             aria-label="WhatsApp"
           >
             <MessageCircle className="h-5 w-5" />
@@ -279,6 +296,30 @@ function TripDetail() {
       </div>
     </div>
   );
+}
+
+function Reveal({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          node.classList.add("is-visible");
+          observer.unobserve(node);
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref} className="scroll-reveal">{children}</div>;
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet, useLocation } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Filter, SlidersHorizontal, X } from "lucide-react";
 import { TripCard } from "@/components/TripCard";
@@ -40,6 +40,12 @@ const DIFFICULTY = ["Any", "Easy", "Moderate", "Challenging"];
 const SORTS = ["Recommended", "Price: Low to High", "Price: High to Low", "Highest rated"];
 
 function TripsPage() {
+  const { pathname } = useLocation();
+
+  if (pathname !== "/trips") {
+    return <Outlet />;
+  }
+
   const search = Route.useSearch();
   const [category, setCategory] = useState<TripCategory | "all">(search.category ?? "all");
   const [duration, setDuration] = useState("Any");

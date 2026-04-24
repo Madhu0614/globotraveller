@@ -475,6 +475,75 @@ export const trips: Trip[] = [
     ],
   },
   {
+    slug: "treasures-of-karnataka",
+    title: "Hampi Gokarna Murudeshwar Honnavar",
+    location: "Karnataka",
+    country: "India",
+    image: gokarnaH,
+    gallery: [gokarnaH, udupi, goa],
+    durationDays: 5,
+    durationNights: 4,
+    price: 8999,
+    originalPrice: 9999,
+    rating: 4.8,
+    reviews: 284,
+    groupSize: "14-46",
+    difficulty: "Easy",
+    category: "weekend",
+    departureCities: ["Pune"],
+    pickup: "BMCC College, FC Road / Wakad",
+    drop: "Pune",
+    months: ["Apr", "May", "Oct", "Nov", "Dec", "Jan", "Feb"],
+    tagline: "Treasures of Karnataka: heritage trails, river rides, and coastal sunsets",
+    description:
+      "Discovering Heritage and Beach Vibes: this 4N/5D circuit combines the ruins of Hampi with the beach calm of Gokarna, the grandeur of Murudeshwar, and the mangrove charm of Honnavar. Expect temple trails, a coracle ride, optional cliff jumping, local markets, and sunset viewpoints.",
+    highlights: [
+      "Duration: 4N/5D",
+      "Difficulty: Easy",
+      "Age: 12-40",
+      "Max altitude: 2000m",
+      "Coracle ride at Tungabhadra River",
+      "Stone Chariot and Vitthala Temple at sunset",
+      "Murudeshwar Shiva statue and temple visit",
+      "Honnavar boating or mangrove boardwalk",
+    ],
+    inclusions: ["Food", "Accommodation", "Instructor", "First Aid", "Travelling"],
+    exclusions: ["Day 2 breakfast on arrival", "Personal expenses", "Optional adventure extras"],
+    itinerary: [
+      {
+        day: 1,
+        title: "24 Apr 2026 - Departure from Pune",
+        details:
+          "Pickup via Seater Traveler: BMCC College FC Road (07:00 PM-08:00 PM), Xion Mall Hinjewadi (08:00 PM-08:30 PM). Pickup via Sleeper Bus: Wakad (07:40 PM), Hinjewadi (07:50 PM), Chandani Chowk (07:55 PM), Katraj (08:45 PM). Reach 30 minutes early and board on time. Journey continues overnight to Hampi.",
+      },
+      {
+        day: 2,
+        title: "25 Apr 2026 - Arrival in Hampi",
+        details:
+          "Arrive around 11:30 AM with breakfast stop on the way. Check in, freshen up, and begin activities. Enjoy a coracle ride on the Tungabhadra River. Optional cliff jumping is available only if water and dam conditions are safe. Have a late lunch and capture sunset views over Hampi ruins. Dinner at a local restaurant. Stay: Hotel Shree International / Delmont Resort or similar.",
+      },
+      {
+        day: 3,
+        title: "26 Apr 2026 - Hampi Exploration",
+        details:
+          "After breakfast and checkout, begin a temple run covering Virupaksha Temple, Hampi Bazaar, Narasimha Temple, Lotus Temple, Ganesha Temple, and nearby ruins. Lunch at a south Indian thali venue. Visit local markets for souvenirs and local interactions. Evening sunset at Vitthala Temple with Stone Chariot visit highlight. Dinner en route to Murudeshwar. Stay: Hotel Shreeram International / Shrikrishna International or similar.",
+      },
+      {
+        day: 4,
+        title: "27 Apr 2026 - Murudeshwar and Gokarna",
+        details:
+          "Early morning arrival around 03:00 AM with check-in in Yallapur/Gokarna. Rest until 09:00 AM. After breakfast, visit Murudeshwar Temple and the iconic Shiva statue. Proceed to Gokarna with a stop at Honnavar for boating or boardwalk based on water level. Visit Mahabaleshwar Temple and witness sunset at Gokarna or Murudeshwar depending on stay location. Begin return journey to Pune.",
+      },
+      {
+        day: 5,
+        title: "28 Apr 2026 - Arrival in Pune",
+        details:
+          "Expected Pune arrival around 11:00 AM. Sleeper-bus participants meet the coordinator in Hampi, with same itinerary and services; only bus category and boarding points differ.",
+      },
+    ],
+    departures: [{ date: "24 Apr 2026", spotsLeft: 18 }],
+  },
+  {
     slug: "gokarna-udupi",
     title: "Gokarna & Udupi Beach Combo",
     location: "Karnataka",

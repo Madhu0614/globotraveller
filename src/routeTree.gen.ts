@@ -14,6 +14,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TripsTreasuresOfKarnatakaRouteImport } from './routes/trips.treasures-of-karnataka'
 import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
 import { Route as LegalTermsRouteImport } from './routes/legal.terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal.privacy'
@@ -46,6 +47,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TripsTreasuresOfKarnatakaRoute =
+  TripsTreasuresOfKarnatakaRouteImport.update({
+    id: '/treasures-of-karnataka',
+    path: '/treasures-of-karnataka',
+    getParentRoute: () => TripsRoute,
+  } as any)
 const TripsSlugRoute = TripsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -89,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
+  '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +110,7 @@ export interface FileRoutesByTo {
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
+  '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +125,7 @@ export interface FileRoutesById {
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
+  '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/legal/privacy'
     | '/legal/terms'
     | '/trips/$slug'
+    | '/trips/treasures-of-karnataka'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/legal/privacy'
     | '/legal/terms'
     | '/trips/$slug'
+    | '/trips/treasures-of-karnataka'
   id:
     | '__root__'
     | '/'
@@ -157,6 +169,7 @@ export interface FileRouteTypes {
     | '/legal/privacy'
     | '/legal/terms'
     | '/trips/$slug'
+    | '/trips/treasures-of-karnataka'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -209,6 +222,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trips/treasures-of-karnataka': {
+      id: '/trips/treasures-of-karnataka'
+      path: '/treasures-of-karnataka'
+      fullPath: '/trips/treasures-of-karnataka'
+      preLoaderRoute: typeof TripsTreasuresOfKarnatakaRouteImport
+      parentRoute: typeof TripsRoute
+    }
     '/trips/$slug': {
       id: '/trips/$slug'
       path: '/$slug'
@@ -256,10 +276,12 @@ declare module '@tanstack/react-router' {
 
 interface TripsRouteChildren {
   TripsSlugRoute: typeof TripsSlugRoute
+  TripsTreasuresOfKarnatakaRoute: typeof TripsTreasuresOfKarnatakaRoute
 }
 
 const TripsRouteChildren: TripsRouteChildren = {
   TripsSlugRoute: TripsSlugRoute,
+  TripsTreasuresOfKarnatakaRoute: TripsTreasuresOfKarnatakaRoute,
 }
 
 const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)

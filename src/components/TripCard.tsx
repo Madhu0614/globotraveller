@@ -14,7 +14,7 @@ export function TripCard({ trip }: { trip: Trip }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
           <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
             {trip.category}
@@ -27,13 +27,13 @@ export function TripCard({ trip }: { trip: Trip }) {
         </div>
         <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between text-white">
           <div>
-            <div className="flex items-center gap-1 text-[11px] font-medium opacity-90">
+            <div className="flex items-center gap-1 text-[11px] font-medium text-white/80">
               <MapPin className="h-3 w-3" />
               {trip.location}
             </div>
             <h3 className="mt-1 line-clamp-1 font-display text-lg font-bold drop-shadow">{trip.title}</h3>
           </div>
-          <div className="flex items-center gap-1 rounded-full bg-white/95 px-2 py-1 text-[11px] font-bold text-foreground">
+          <div className="flex items-center gap-1 rounded-full bg-white/95 px-2 py-1 text-[11px] font-bold text-[#1a1a1a]">
             <Star className="h-3 w-3 fill-warm text-warm" />
             {trip.rating}
           </div>
@@ -62,7 +62,7 @@ export function TripCard({ trip }: { trip: Trip }) {
                   ₹{trip.originalPrice.toLocaleString("en-IN")}
                 </span>
               )}
-              <span className="font-display text-xl font-extrabold text-foreground">
+              <span className="font-display text-xl font-extrabold text-[#1a1a1a]">
                 ₹{trip.price.toLocaleString("en-IN")}
               </span>
             </div>

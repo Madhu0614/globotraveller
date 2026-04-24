@@ -8,14 +8,14 @@ export function Gallery() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-primary">
-            <Instagram className="h-4 w-4" /> @globo.traveller
+            <Instagram className="h-4 w-4" /> globotraveller.in
           </p>
           <h2 className="mt-1 font-display text-3xl font-extrabold sm:text-4xl">
             Postcards from our travellers
           </h2>
         </div>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/globotraveller.in"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background hover:opacity-90 sm:inline-block"
@@ -28,7 +28,7 @@ export function Gallery() {
         {imgs.map((src, i) => (
           <a
             key={i}
-            href="https://instagram.com"
+            href="https://www.instagram.com/globotraveller.in"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative aspect-square overflow-hidden rounded-2xl"

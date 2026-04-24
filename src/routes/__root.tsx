@@ -38,7 +38,7 @@ export const Route = createRootRoute({
       { name: "author", content: "Globo Traveller" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#1d3fb0" },
+      { name: "theme-color", content: "#1E2A1E" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" } as never,
     ],
     links: [

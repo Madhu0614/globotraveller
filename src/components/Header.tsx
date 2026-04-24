@@ -1,18 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, MessageCircle, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Mail, Menu, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
-type NavItem = {
+type MobileNavItem = {
   label: string;
   to?: string;
   children?: { label: string; to: string }[];
 };
 
-const nav: NavItem[] = [
+const desktopLeft = [
+  { label: "Destinations", to: "/trips" },
+  { label: "Experiences", to: "/trips" },
+];
+
+const desktopRight = [
+  { label: "Blogs", to: "/faq" },
+  { label: "About Us", to: "/about" },
+  { label: "Travel Guide", to: "/faq", emphasized: true },
+];
+
+const mobileNav: MobileNavItem[] = [
   { label: "Home", to: "/" },
   {
     label: "Destinations",
@@ -25,36 +36,9 @@ const nav: NavItem[] = [
       { label: "Rajasthan", to: "/trips?destination=rajasthan" },
     ],
   },
-  {
-    label: "Domestic Trips",
-    children: [
-      { label: "Weekend Trips", to: "/trips?category=weekend" },
-      { label: "Backpacking Trips", to: "/trips?category=backpacking" },
-      { label: "Group Trips", to: "/trips?type=group" },
-      { label: "Upcoming Trips", to: "/trips?category=upcoming" },
-    ],
-  },
-  {
-    label: "International Trips",
-    children: [
-      { label: "Bali", to: "/trips?destination=bali" },
-      { label: "Vietnam", to: "/trips?destination=vietnam" },
-      { label: "Thailand", to: "/trips?destination=thailand" },
-      { label: "Japan", to: "/trips?destination=japan" },
-      { label: "Georgia", to: "/trips?destination=georgia" },
-      { label: "Sri Lanka", to: "/trips?destination=sri-lanka" },
-    ],
-  },
-  {
-    label: "Treks",
-    children: [
-      { label: "All Treks", to: "/trips?category=trekking" },
-      { label: "Triund Trek", to: "/trips?destination=triund" },
-      { label: "Kedarkantha", to: "/trips?destination=kedarkantha" },
-      { label: "Hampta Pass", to: "/trips?destination=hampta-pass" },
-    ],
-  },
-  { label: "About", to: "/about" },
+  { label: "Blogs", to: "/faq" },
+  { label: "About Us", to: "/about" },
+  { label: "Travel Guide", to: "/faq" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -79,145 +63,160 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full transition-all",
-        scrolled
-          ? "border-b border-border/60 bg-background/85 backdrop-blur-lg shadow-soft"
-          : "bg-background/0"
+        "fixed left-0 right-0 top-0 z-40 w-full pt-4 transition-all",
+        scrolled && "backdrop-blur-sm"
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        <Logo />
-
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
-          {nav.map((item) =>
-            item.children ? (
-              <div key={item.label} className="group relative">
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition hover:bg-primary-soft hover:text-primary"
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div
+          className={cn(
+            "rounded-[1.15rem] border border-white/80 bg-white/94 px-5 py-1.5 shadow-brand backdrop-blur-md transition-all md:px-7",
+            scrolled && "bg-white/96"
+          )}
+        >
+          <div className="hidden min-h-[58px] items-center justify-between gap-5 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+            <div className="flex items-center gap-3 justify-self-start">
+              <a
+                href="mailto:hello@globotraveller.in"
+                className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-primary px-3.5 text-xs font-semibold text-primary-foreground transition hover:bg-[#2d3d2d]"
+              >
+                <Mail className="h-3 w-3" />
+                Contact Now
+              </a>
+              {desktopLeft.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.to as "/"}
+                  className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-foreground/80 transition hover:bg-primary-soft hover:text-primary"
                 >
                   {item.label}
-                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-                </button>
+                </Link>
+              ))}
+            </div>
 
-                <div className="invisible absolute left-0 top-full z-50 mt-2 min-w-[240px] rounded-2xl border border-border/60 bg-background p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  <div className="flex flex-col gap-1">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        to={child.to as "/"}
-                        className="rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition hover:bg-primary-soft hover:text-primary"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={item.label}
-                to={(item.to || "/") as "/"}
-                className="rounded-full px-3 py-2 text-sm font-medium text-foreground/75 transition hover:bg-primary-soft hover:text-primary"
-                activeProps={{ className: "text-primary" }}
-                activeOptions={{ exact: item.to === "/" }}
+            <Logo className="items-center justify-self-center" />
+
+            <nav className="flex items-center justify-end gap-2 justify-self-end">
+              {desktopRight.map((item) =>
+                item.emphasized ? (
+                  <Link
+                    key={item.label}
+                    to={item.to as "/"}
+                    className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#111111] px-3.5 text-xs font-semibold text-white transition hover:bg-primary"
+                  >
+                    {item.label}
+                    <ArrowUpRight className="h-3 w-3" />
+                  </Link>
+                ) : (
+                  <Link
+                    key={item.label}
+                    to={item.to as "/"}
+                    className="rounded-lg px-3.5 py-2 text-[13px] font-medium text-foreground/80 transition hover:bg-primary-soft hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
+            </nav>
+          </div>
+
+          <div className="flex min-h-[46px] items-center justify-between gap-3 lg:hidden">
+            <a
+              href="mailto:hello@globotraveller.in"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground"
+              aria-label="Contact now"
+            >
+              <Mail className="h-3.5 w-3.5" />
+            </a>
+
+            <Logo className="items-center" />
+
+            <div className="flex items-center gap-2">
+              <a
+                href="https://wa.me/917975550990"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden items-center gap-1 rounded-lg border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground/80 transition hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)] sm:inline-flex"
               >
-                {item.label}
-              </Link>
-            )
-          )}
-        </nav>
+                <MessageCircle className="h-3.5 w-3.5" />
+                WhatsApp
+              </a>
 
-        <div className="flex items-center gap-2">
-          <a
-            href="https://wa.me/917975550990"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-1.5 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground/80 transition hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)] sm:inline-flex"
-          >
-            <MessageCircle className="h-3.5 w-3.5" />
-            WhatsApp
-          </a>
+              <Sheet open={open} onOpenChange={setOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="h-9 w-9 rounded-lg" aria-label="Menu">
+                    <Menu className="h-4.5 w-4.5" />
+                  </Button>
+                </SheetTrigger>
 
-          <Button asChild size="sm" className="hidden rounded-full px-5 sm:inline-flex">
-            <Link to="/trips">Explore Trips</Link>
-          </Button>
+                <SheetContent side="right" className="w-[88vw] max-w-sm overflow-y-auto">
+                  <div className="mt-2 flex flex-col gap-1 pb-6">
+                    <Logo showTag />
 
-          {/* Mobile Menu */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Menu">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
+                    <nav className="mt-6 flex flex-col gap-2">
+                      {mobileNav.map((item) =>
+                        item.children ? (
+                          <div key={item.label} className="rounded-xl border border-border/50">
+                            <button
+                              type="button"
+                              onClick={() => toggleMobileMenu(item.label)}
+                              className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-base font-medium text-foreground/85"
+                            >
+                              <span>{item.label}</span>
+                              <ChevronDown
+                                className={cn(
+                                  "h-4 w-4 transition-transform",
+                                  mobileOpenMenus.includes(item.label) && "rotate-180"
+                                )}
+                              />
+                            </button>
 
-            <SheetContent side="right" className="w-[88vw] max-w-sm overflow-y-auto">
-              <div className="mt-2 flex flex-col gap-1 pb-6">
-                <Logo />
-
-                <nav className="mt-6 flex flex-col gap-2">
-                  {nav.map((item) =>
-                    item.children ? (
-                      <div key={item.label} className="rounded-xl border border-border/50">
-                        <button
-                          type="button"
-                          onClick={() => toggleMobileMenu(item.label)}
-                          className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-base font-medium text-foreground/85"
-                        >
-                          <span>{item.label}</span>
-                          <ChevronDown
-                            className={cn(
-                              "h-4 w-4 transition-transform",
-                              mobileOpenMenus.includes(item.label) && "rotate-180"
+                            {mobileOpenMenus.includes(item.label) && (
+                              <div className="flex flex-col gap-1 px-2 pb-2">
+                                {item.children.map((child) => (
+                                  <Link
+                                    key={child.label}
+                                    to={child.to as "/"}
+                                    onClick={() => setOpen(false)}
+                                    className="rounded-lg px-3 py-2 text-sm text-foreground/75 hover:bg-primary-soft hover:text-primary"
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ))}
+                              </div>
                             )}
-                          />
-                        </button>
-
-                        {mobileOpenMenus.includes(item.label) && (
-                          <div className="flex flex-col gap-1 px-2 pb-2">
-                            {item.children.map((child) => (
-                              <Link
-                                key={child.label}
-                                to={child.to as "/"}
-                                onClick={() => setOpen(false)}
-                                className="rounded-lg px-3 py-2 text-sm text-foreground/75 hover:bg-primary-soft hover:text-primary"
-                              >
-                                {child.label}
-                              </Link>
-                            ))}
                           </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        key={item.label}
-                        to={(item.to || "/") as "/"}
-                        onClick={() => setOpen(false)}
-                        className="rounded-xl px-3 py-3 text-base font-medium text-foreground/85 hover:bg-primary-soft hover:text-primary"
-                      >
-                        {item.label}
-                      </Link>
-                    )
-                  )}
-                </nav>
+                        ) : (
+                          <Link
+                            key={item.label}
+                            to={(item.to || "/") as "/"}
+                            onClick={() => setOpen(false)}
+                            className="rounded-xl px-3 py-3 text-base font-medium text-foreground/85 hover:bg-primary-soft hover:text-primary"
+                          >
+                            {item.label}
+                          </Link>
+                        )
+                      )}
+                    </nav>
 
-                <Button asChild className="mt-4 rounded-full" onClick={() => setOpen(false)}>
-                  <Link to="/trips">Explore Trips</Link>
-                </Button>
+                    <Button asChild className="mt-4 rounded-full" onClick={() => setOpen(false)}>
+                      <Link to="/trips">Explore Packages</Link>
+                    </Button>
 
-                <a
-                  href="https://wa.me/917975550990"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground"
-                >
-                  <MessageCircle className="h-4 w-4 text-[var(--whatsapp)]" />
-                  Chat on WhatsApp
-                </a>
-              </div>
-            </SheetContent>
-          </Sheet>
+                    <a
+                      href="https://wa.me/917975550990"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground"
+                    >
+                      <MessageCircle className="h-4 w-4 text-[var(--whatsapp)]" />
+                      Chat on WhatsApp
+                    </a>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
         </div>
       </div>
     </header>

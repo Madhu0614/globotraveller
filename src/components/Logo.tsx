@@ -1,6 +1,6 @@
-import { Globe2 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
+import logoImage from "@/assets/final_logo.png";
 
 interface LogoProps {
   variant?: "default" | "light";
@@ -10,32 +10,35 @@ interface LogoProps {
 
 export function Logo({ variant = "default", className, showTag = false }: LogoProps) {
   const isLight = variant === "light";
+
   return (
-    <Link to="/" className={cn("inline-flex items-center gap-2 group", className)}>
+    <Link to="/" className={cn("inline-flex flex-col items-start gap-1", className)}>
       <span
         className={cn(
-          "relative flex h-9 w-9 items-center justify-center rounded-xl shadow-soft transition-transform group-hover:rotate-6",
-          isLight ? "bg-white/15 backdrop-blur ring-1 ring-white/30" : "bg-gradient-brand"
+          "flex items-center overflow-hidden",
+          showTag ? "h-[36px] sm:h-[40px]" : "h-[40px] sm:h-[44px]"
         )}
       >
-        <Globe2 className={cn("h-5 w-5", isLight ? "text-white" : "text-primary-foreground")} strokeWidth={2.4} />
+        <img
+          src={logoImage}
+          alt="Globo Traveller"
+          className={cn(
+            "h-full w-auto object-contain origin-center",
+            showTag ? "scale-[1.22] sm:scale-[1.26]" : "scale-[1.46] sm:scale-[1.54]",
+            isLight && "brightness-0 invert"
+          )}
+        />
       </span>
-      <span className="flex flex-col leading-none">
+      {showTag && (
         <span
           className={cn(
-            "font-display text-[1.05rem] font-extrabold tracking-tight",
-            isLight ? "text-white" : "text-foreground"
+            "pl-1 text-[10px] font-medium uppercase tracking-[0.18em]",
+            isLight ? "text-white/70" : "text-muted-foreground"
           )}
         >
-          Globo<span className="text-primary group-data-[variant=light]:text-warm">{isLight ? "" : ""}</span>
-          <span className={cn(isLight ? "text-warm" : "text-primary")}>·</span>traveller
+          We make it happen
         </span>
-        {showTag && (
-          <span className={cn("text-[10px] font-medium uppercase tracking-[0.18em]", isLight ? "text-white/70" : "text-muted-foreground")}>
-            Explore more
-          </span>
-        )}
-      </span>
+      )}
     </Link>
   );
 }
