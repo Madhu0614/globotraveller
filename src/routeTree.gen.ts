@@ -9,34 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TripsRouteImport } from './routes/trips'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TripsTreasuresOfKarnatakaRouteImport } from './routes/trips.treasures-of-karnataka'
-import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
-import { Route as LegalTermsRouteImport } from './routes/legal.terms'
-import { Route as LegalPrivacyRouteImport } from './routes/legal.privacy'
-import { Route as LegalCancellationRouteImport } from './routes/legal.cancellation'
-import { Route as BookingConfirmationRouteImport } from './routes/booking.confirmation'
-import { Route as BookingSlugRouteImport } from './routes/booking.$slug'
+import { Route as TripsIndexRouteImport } from './routes/trips/index'
+import { Route as FaqIndexRouteImport } from './routes/faq/index'
+import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
+import { Route as TripsTreasuresOfKarnatakaRouteImport } from './routes/trips/treasures-of-karnataka'
+import { Route as TripsSlugRouteImport } from './routes/trips/$slug'
+import { Route as LegalTermsRouteImport } from './routes/legal/terms'
+import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
+import { Route as LegalCancellationRouteImport } from './routes/legal/cancellation'
+import { Route as BookingConfirmationRouteImport } from './routes/booking/confirmation'
+import { Route as BookingSlugRouteImport } from './routes/booking/$slug'
+import { Route as BlogsSlugRouteImport } from './routes/blogs/$slug'
 
-const TripsRoute = TripsRouteImport.update({
-  id: '/trips',
-  path: '/trips',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -47,16 +34,36 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TripsIndexRoute = TripsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TripsRoute,
+} as any)
+const FaqIndexRoute = FaqIndexRouteImport.update({
+  id: '/faq/',
+  path: '/faq/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/contact/',
+  path: '/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsIndexRoute = BlogsIndexRouteImport.update({
+  id: '/blogs/',
+  path: '/blogs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TripsTreasuresOfKarnatakaRoute =
   TripsTreasuresOfKarnatakaRouteImport.update({
-    id: '/treasures-of-karnataka',
-    path: '/treasures-of-karnataka',
-    getParentRoute: () => TripsRoute,
+    id: '/trips/treasures-of-karnataka',
+    path: '/trips/treasures-of-karnataka',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const TripsSlugRoute = TripsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => TripsRoute,
+  id: '/trips/$slug',
+  path: '/trips/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LegalTermsRoute = LegalTermsRouteImport.update({
   id: '/legal/terms',
@@ -83,13 +90,16 @@ const BookingSlugRoute = BookingSlugRouteImport.update({
   path: '/booking/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/blogs/$slug',
+  path: '/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/booking/$slug': typeof BookingSlugRoute
   '/booking/confirmation': typeof BookingConfirmationRoute
   '/legal/cancellation': typeof LegalCancellationRoute
@@ -97,13 +107,15 @@ export interface FileRoutesByFullPath {
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/faq/': typeof FaqIndexRoute
+  '/trips/': typeof TripsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/booking/$slug': typeof BookingSlugRoute
   '/booking/confirmation': typeof BookingConfirmationRoute
   '/legal/cancellation': typeof LegalCancellationRoute
@@ -111,14 +123,16 @@ export interface FileRoutesByTo {
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/blogs': typeof BlogsIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/faq': typeof FaqIndexRoute
+  '/trips': typeof TripsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/faq': typeof FaqRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/booking/$slug': typeof BookingSlugRoute
   '/booking/confirmation': typeof BookingConfirmationRoute
   '/legal/cancellation': typeof LegalCancellationRoute
@@ -126,15 +140,17 @@ export interface FileRoutesById {
   '/legal/terms': typeof LegalTermsRoute
   '/trips/$slug': typeof TripsSlugRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/faq/': typeof FaqIndexRoute
+  '/trips/': typeof TripsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/contact'
-    | '/faq'
-    | '/trips'
+    | '/blogs/$slug'
     | '/booking/$slug'
     | '/booking/confirmation'
     | '/legal/cancellation'
@@ -142,13 +158,15 @@ export interface FileRouteTypes {
     | '/legal/terms'
     | '/trips/$slug'
     | '/trips/treasures-of-karnataka'
+    | '/blogs/'
+    | '/contact/'
+    | '/faq/'
+    | '/trips/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/contact'
-    | '/faq'
-    | '/trips'
+    | '/blogs/$slug'
     | '/booking/$slug'
     | '/booking/confirmation'
     | '/legal/cancellation'
@@ -156,13 +174,15 @@ export interface FileRouteTypes {
     | '/legal/terms'
     | '/trips/$slug'
     | '/trips/treasures-of-karnataka'
+    | '/blogs'
+    | '/contact'
+    | '/faq'
+    | '/trips'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/contact'
-    | '/faq'
-    | '/trips'
+    | '/blogs/$slug'
     | '/booking/$slug'
     | '/booking/confirmation'
     | '/legal/cancellation'
@@ -170,44 +190,30 @@ export interface FileRouteTypes {
     | '/legal/terms'
     | '/trips/$slug'
     | '/trips/treasures-of-karnataka'
+    | '/blogs/'
+    | '/contact/'
+    | '/faq/'
+    | '/trips/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
-  FaqRoute: typeof FaqRoute
-  TripsRoute: typeof TripsRouteWithChildren
+  BlogsSlugRoute: typeof BlogsSlugRoute
   BookingSlugRoute: typeof BookingSlugRoute
   BookingConfirmationRoute: typeof BookingConfirmationRoute
   LegalCancellationRoute: typeof LegalCancellationRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
   LegalTermsRoute: typeof LegalTermsRoute
+  TripsSlugRoute: typeof TripsSlugRoute
+  TripsTreasuresOfKarnatakaRoute: typeof TripsTreasuresOfKarnatakaRoute
+  BlogsIndexRoute: typeof BlogsIndexRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+  FaqIndexRoute: typeof FaqIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/trips': {
-      id: '/trips'
-      path: '/trips'
-      fullPath: '/trips'
-      preLoaderRoute: typeof TripsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -222,19 +228,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trips/': {
+      id: '/trips/'
+      path: '/'
+      fullPath: '/trips/'
+      preLoaderRoute: typeof TripsIndexRouteImport
+      parentRoute: typeof TripsRoute
+    }
+    '/faq/': {
+      id: '/faq/'
+      path: '/faq'
+      fullPath: '/faq/'
+      preLoaderRoute: typeof FaqIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/contact'
+      fullPath: '/contact/'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/': {
+      id: '/blogs/'
+      path: '/blogs'
+      fullPath: '/blogs/'
+      preLoaderRoute: typeof BlogsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trips/treasures-of-karnataka': {
       id: '/trips/treasures-of-karnataka'
-      path: '/treasures-of-karnataka'
+      path: '/trips/treasures-of-karnataka'
       fullPath: '/trips/treasures-of-karnataka'
       preLoaderRoute: typeof TripsTreasuresOfKarnatakaRouteImport
-      parentRoute: typeof TripsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/trips/$slug': {
       id: '/trips/$slug'
-      path: '/$slug'
+      path: '/trips/$slug'
       fullPath: '/trips/$slug'
       preLoaderRoute: typeof TripsSlugRouteImport
-      parentRoute: typeof TripsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/legal/terms': {
       id: '/legal/terms'
@@ -271,32 +305,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookingSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/blogs/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
-
-interface TripsRouteChildren {
-  TripsSlugRoute: typeof TripsSlugRoute
-  TripsTreasuresOfKarnatakaRoute: typeof TripsTreasuresOfKarnatakaRoute
-}
-
-const TripsRouteChildren: TripsRouteChildren = {
-  TripsSlugRoute: TripsSlugRoute,
-  TripsTreasuresOfKarnatakaRoute: TripsTreasuresOfKarnatakaRoute,
-}
-
-const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ContactRoute: ContactRoute,
-  FaqRoute: FaqRoute,
-  TripsRoute: TripsRouteWithChildren,
+  BlogsSlugRoute: BlogsSlugRoute,
   BookingSlugRoute: BookingSlugRoute,
   BookingConfirmationRoute: BookingConfirmationRoute,
   LegalCancellationRoute: LegalCancellationRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,
   LegalTermsRoute: LegalTermsRoute,
+  TripsSlugRoute: TripsSlugRoute,
+  TripsTreasuresOfKarnatakaRoute: TripsTreasuresOfKarnatakaRoute,
+  BlogsIndexRoute: BlogsIndexRoute,
+  ContactIndexRoute: ContactIndexRoute,
+  FaqIndexRoute: FaqIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

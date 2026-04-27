@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { faqs } from "@/lib/trips";
 
-export const Route = createFileRoute("/faq")({
+export const Route = createFileRoute("/faq/")({
   head: () => ({ meta: [{ title: "FAQ — Globo Traveller" }] }),
   component: FaqPage,
 });

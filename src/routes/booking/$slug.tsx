@@ -78,7 +78,7 @@ function BookingPage() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-primary-soft/40 to-background">
+    <div className="bg-linear-to-b from-primary-soft/40 to-background">
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-8 md:py-14">
         <Link to="/trips/$slug" params={{ slug: trip.slug }} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
           <ChevronLeft className="h-4 w-4" /> Back to trip
@@ -111,9 +111,9 @@ function BookingPage() {
               <div className="space-y-4">
                 <h2 className="font-display text-lg font-bold">Traveller details</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <Field label="Full name"><Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Aarav Sharma" /></Field>
-                  <Field label="Phone"><Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 7975550990" /></Field>
-                  <Field label="Email"><Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" /></Field>
+                  <Field label="Full name"><Input value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} placeholder="Aarav Sharma" /></Field>
+                  <Field label="Phone"><Input value={phone} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)} placeholder="+91 7975550990" /></Field>
+                  <Field label="Email"><Input type="email" value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} placeholder="you@email.com" /></Field>
                   <Field label="Number of travellers">
                     <div className="flex items-center gap-2">
                       <Button type="button" variant="outline" size="icon" className="rounded-full" onClick={() => setTravellers((t) => Math.max(1, t - 1))}>−</Button>
@@ -129,7 +129,7 @@ function BookingPage() {
               <div className="space-y-4">
                 <h2 className="font-display text-lg font-bold">Pick your departure</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {trip.departures.map((d) => (
+                  {trip.departures.map((d: Trip["departures"][0]) => (
                     <button
                       key={d.date}
                       type="button"
@@ -184,7 +184,7 @@ function BookingPage() {
                   <div className="mt-2 flex gap-2">
                     <div className="relative flex-1">
                       <Tag className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      <Input value={coupon} onChange={(e) => setCoupon(e.target.value)} placeholder="Try GLOBO10" className="pl-9" />
+                      <Input value={coupon} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCoupon(e.target.value)} placeholder="Try GLOBO10" className="pl-9" />
                     </div>
                     <Button type="button" variant="outline" className="rounded-full" onClick={applyCoupon}>Apply</Button>
                   </div>
@@ -244,7 +244,7 @@ function BookingPage() {
           {/* Summary */}
           <aside>
             <div className="sticky top-24 rounded-3xl border border-border bg-card p-5 shadow-card">
-              <img src={trip.image} alt="" className="aspect-[5/3] w-full rounded-2xl object-cover" />
+              <img src={trip.image} alt="" className="aspect-5/3 w-full rounded-2xl object-cover" />
               <h3 className="mt-3 font-display text-base font-bold">{trip.title}</h3>
               <p className="text-xs text-muted-foreground">{date || "Select a date"} · {trip.durationDays}D/{trip.durationNights}N</p>
 
@@ -287,7 +287,7 @@ function AddonRow({
         (checked ? "border-primary bg-primary-soft" : "border-border bg-background hover:border-primary")
       }
     >
-      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} className="h-5 w-5 accent-[var(--primary)]" />
+      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} className="h-5 w-5 accent-primary" />
       <div className="flex-1">
         <p className="font-display text-sm font-bold">{title}</p>
         <p className="text-xs text-muted-foreground">{desc}</p>

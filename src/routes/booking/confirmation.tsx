@@ -20,7 +20,7 @@ function ConfirmationPage() {
   const ref = "GT-" + Math.random().toString(36).slice(2, 8).toUpperCase();
 
   return (
-    <div className="bg-gradient-to-b from-primary-soft/50 to-background">
+    <div className="bg-linear-to-b from-primary-soft/50 to-background">
       <div className="mx-auto max-w-2xl px-4 py-16 md:px-8 md:py-24">
         <div className="rounded-3xl border border-border bg-card p-6 shadow-brand md:p-10">
           <div className="grid h-16 w-16 place-items-center rounded-full bg-success/15 text-success">
@@ -57,7 +57,7 @@ function ConfirmationPage() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <a
               href="https://wa.me/917975550990"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--whatsapp)] px-4 py-3 text-sm font-semibold text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-white"
             >
               <MessageCircle className="h-4 w-4" /> Chat with trip captain
             </a>

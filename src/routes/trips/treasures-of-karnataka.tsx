@@ -20,130 +20,111 @@ import SplitType from "split-type";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import heroBanner from "@/assets/Treasures_of_Karnataka.webp";
+import heroBanner from "@/assets/hampip4.avif";
 import hampiHero from "@/assets/hampip4.avif";
 import hampiTemple from "@/assets/hampip1.jpg.jpeg";
 import hampiRiver from "@/assets/hampip2.jpg.jpeg";
 import hampiRuins from "@/assets/hampip3.webp";
-import gokarnaBeach from "@/assets/gokarnap1.jpg.jpeg";
-import gokarnaCoast from "@/assets/gokarnap2.jpeg";
-import gokarnaSunset from "@/assets/gokarnap3.webp";
-import gokarnaTemple from "@/assets/gokarnap4.jpg.jpeg";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
+// ── DATA ─────────────────────────────────────────────────────────────────────
+
 const itinerary = [
   {
-    day: "Day 1 - 24 Apr 2026",
-    title: "Departure from Pune",
-    subtitle: "Night departure with multiple pickup points.",
+    day: "Day 0 — Friday Night",
+    title: "Departure from Hyderabad",
+    subtitle: "The city fades out, the adventure begins.",
     image: hampiHero,
     points: [
-      "Pune departure via Seater Traveler: BMCC College, FC Road (07:00 PM-08:00 PM), Xion Mall, Hinjewadi (08:00 PM-08:30 PM).",
-      "Pune departure via Sleeper Bus: Wakad (07:40 PM), Hinjewadi (07:50 PM), Chandani Chowk (07:55 PM), Katraj (08:45 PM).",
-      "Please arrive at your pickup point at least 30 minutes before departure.",
-      "Journey continues overnight towards Hampi.",
+      "10:00 PM — Near Rayalaseema Ruchulu, Lakdikapul.",
+      "10:30 PM — Near Bikanervala, Aramghar.",
+      "10:45 PM — Nehru ORR Exit 16, Shamshabad.",
+      "Overnight journey to Hampi in a private MUV / Tempo Traveller.",
+      "Midnight chatter, travel games, and a crew of fellow explorers.",
     ],
     meals: "None",
     notes: [
-      "Pickup timings are approximate and can be delayed due to traffic or long-weekend conditions.",
-      "Sleeper bus departs from Mumbai route timings; track with your ticket link/message.",
-      "Late arrival or missed bus boarding is not covered.",
+      "Arrive at your pickup point at least 15 minutes before the scheduled time.",
+      "Trip confirms only if at least 10 travellers have reserved — you'll be notified in advance.",
+      "Timings are approximate and may vary due to traffic conditions.",
     ],
   },
   {
-    day: "Day 2 - 25 Apr 2026",
-    title: "Arrival in Hampi",
-    subtitle: "Riverside adventure, ruins, and sunset energy.",
+    day: "Day 1 — Saturday",
+    title: "Coracle Ride · Anegundi Fort · Anjanadri Hill",
+    subtitle: "Boulders, history, and a golden Tungabhadra sunset.",
     image: hampiRiver,
     points: [
-      "Arrival in Hampi around 11:30 AM with breakfast stop on the way.",
-      "Check-in, freshen up, and get ready for activities.",
-      "Coracle ride on Tungabhadra River and optional cliff jumping (condition based).",
-      "Late lunch after activities and sunset view from the other side of Hampi ruins.",
-      "Dinner at a local restaurant.",
+      "Early morning arrival in Hampi — straight to Sanapur Lake for a coracle ride amid iconic boulder landscapes.",
+      "Check-in, breakfast, and freshen up at the experiential stay near the sunrise point.",
+      "Explore Anegundi Fort — one of the oldest parts of Hampi with stunning viewpoints and rustic charm.",
+      "Lunch at a local café in Hampi.",
+      "Anjanadri Hill trek — believed to be the birthplace of Lord Hanuman. Short, scenic climb with a spectacular view.",
+      "Sunset from the hilltop paints the entire Tungabhadra valley in gold.",
+      "Return to stay: bonfire, dinner, and fun group games.",
     ],
-    meals: "Lunch",
+    meals: "Breakfast & Lunch",
     notes: [
-      "Cliff jumping depends on safe water levels and dam gate conditions.",
-      "Day 2 breakfast on arrival is not included; meals begin from lunch.",
-      "Stay: Hotel Shree International / Delmont Resort or similar.",
+      "Coracle ride is subject to water-level conditions at Sanapur Lake.",
+      "The Anjanadri Hill trek is beginner-friendly — roughly 570 steps.",
+      "Carry comfortable footwear, sunscreen, and personal hydration.",
     ],
   },
   {
-    day: "Day 3 - 26 Apr 2026",
-    title: "Hampi Exploration",
-    subtitle: "Temple circuits, markets, and golden-hour architecture.",
+    day: "Day 2 — Sunday",
+    title: "Vijaya Vittala · Lotus Mahal · Virupaksha",
+    subtitle: "Stone chariots, ancient empires, and a heritage farewell.",
     image: hampiTemple,
     points: [
-      "Breakfast and checkout.",
-      "Hampi temple run: Virupaksha Temple, Hampi Bazaar, Narasimha Temple, Lotus Temple, Ganesha Temple and nearby ruins.",
-      "South Indian thali lunch.",
-      "Local market exploration and souvenir shopping.",
-      "Sunset at Vitthala Temple with Stone Chariot visit.",
-      "Dinner en route to Murudeshwar.",
+      "Morning breakfast before diving into Hampi's most iconic landmarks.",
+      "Vijaya Vittala Temple — home to the legendary Stone Chariot featured on the ₹50 note.",
+      "Lotus Mahal, Elephant Stables, and Hazara Rama Temple — each a chapter from the Vijayanagara Empire.",
+      "Lunch at a local café near Hampi Bazaar.",
+      "Virupaksha Temple — one of India's oldest functioning temples, filled with deep spiritual energy.",
+      "Hampi Museum for a quick glimpse into ancient history.",
+      "Hemakuta Hill for the final sunset view, then depart for Hyderabad.",
+      "Arrive back in Hyderabad early Monday morning.",
     ],
-    meals: "Breakfast and Lunch",
+    meals: "Breakfast & Lunch",
     notes: [
-      "Stay: Hotel Shreeram International / Shrikrishna International or similar.",
-      "Carry hydration and footwear suitable for temple-walk distances.",
-    ],
-  },
-  {
-    day: "Day 4 - 27 Apr 2026",
-    title: "Murudeshwar and Gokarna",
-    subtitle: "Coastal temples, boating, and sea-facing sunsets.",
-    image: gokarnaCoast,
-    points: [
-      "Early morning arrival in Yallapur/Gokarna around 03:00 AM and check-in.",
-      "Rest until 09:00 AM and breakfast.",
-      "Visit Murudeshwar Temple and the largest Shiva statue viewpoint.",
-      "Proceed to Gokarna with Honnavar stop for boating or mangrove boardwalk.",
-      "Visit Mahabaleshwar Temple and enjoy sunset at Gokarna or Murudeshwar (based on stay location).",
-      "Begin return journey to Pune.",
-    ],
-    meals: "Breakfast and Lunch",
-    notes: [
-      "Honnavar boating is water-level dependent; boardwalk is arranged if boating is unavailable.",
-      "Dress modestly while entering temple premises.",
-    ],
-  },
-  {
-    day: "Day 5 - 28 Apr 2026",
-    title: "Arrival in Pune",
-    subtitle: "Return with the same circuit services completed.",
-    image: gokarnaSunset,
-    points: [
-      "Estimated arrival in Pune around 11:00 AM.",
-      "Sleeper bus participants meet coordinator in Hampi.",
-      "Services and itinerary remain the same; only bus category and boarding point differ.",
-    ],
-    meals: "None",
-    notes: [
-      "Board sleeper buses on time; private operators do not wait.",
-      "Primary age group is 14-46 years; customized itineraries can be discussed for older participants.",
+      "Temple entry requires modest clothing — avoid sleeveless tops and shorts.",
+      "Entry fees for monuments and activities not mentioned are payable separately.",
+      "Departure from Hampi by evening; estimated Hyderabad arrival is Monday early morning.",
     ],
   },
 ];
 
-const includes = ["Food", "Accommodation", "Instructor", "First Aid", "Travelling"];
-const routeStops = ["Pune", "Hampi", "Murudeshwar", "Honnavar", "Gokarna"];
+const includes = [
+  "Pick-up & Drop",
+  "Private Vehicle",
+  "Accommodation",
+  "Trip Leader",
+  "Local Guide",
+  "Tolls & Taxes",
+];
+
+const routeStops = ["Hyderabad", "Hampi"];
+
+// ── ROUTE ────────────────────────────────────────────────────────────────────
 
 export const Route = createFileRoute("/trips/treasures-of-karnataka")({
   head: () => ({
     meta: [
-      { title: "Treasures of Karnataka - Hampi Gokarna Murudeshwar Honnavar" },
+      { title: "Hampi Escapade — 2D 1N Weekend Getaway from Hyderabad" },
       {
         name: "description",
         content:
-          "A premium classic travel itinerary page for Treasures of Karnataka covering Hampi, Murudeshwar, Honnavar, and Gokarna in 4N/5D.",
+          "A premium weekend itinerary page for Travloger's Hampi Escapade — coracle rides, Anjanadri Hill trek, Vijaya Vittala Temple, and ancient ruins. Ex-Hyderabad, every Friday.",
       },
     ],
   }),
-  component: TreasuresOfKarnatakaPage,
+  component: HampiEscapadePage,
 });
 
-function TreasuresOfKarnatakaPage() {
+// ── PAGE ─────────────────────────────────────────────────────────────────────
+
+function HampiEscapadePage() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
   const heroTitleRef = useRef<HTMLHeadingElement | null>(null);
@@ -170,11 +151,7 @@ function TreasuresOfKarnatakaPage() {
     });
 
     lenis.on("scroll", ScrollTrigger.update);
-
-    const ticker = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
+    const ticker = (time: number) => { lenis.raf(time * 1000); };
     gsap.ticker.add(ticker);
     gsap.ticker.lagSmoothing(0);
     ScrollTrigger.refresh();
@@ -193,45 +170,24 @@ function TreasuresOfKarnatakaPage() {
 
       if (heroTitleRef.current) {
         split = new SplitType(heroTitleRef.current, { types: "lines,words,chars" });
-
-        gsap.set(split.chars, {
-          opacity: 0,
-          yPercent: 100,
-          rotateX: 12,
-          transformOrigin: "50% 100%",
-        });
-
+        gsap.set(split.chars, { opacity: 0, yPercent: 100, rotateX: 12, transformOrigin: "50% 100%" });
         gsap.to(split.chars, {
-          opacity: 1,
-          yPercent: 0,
-          rotateX: 0,
-          duration: 1,
-          stagger: 0.018,
-          ease: "power4.out",
-          delay: 0.08,
+          opacity: 1, yPercent: 0, rotateX: 0,
+          duration: 1, stagger: 0.018, ease: "power4.out", delay: 0.08,
         });
       }
 
       if (heroCopyRef.current) {
-        gsap.fromTo(
-          heroCopyRef.current,
+        gsap.fromTo(heroCopyRef.current,
           { opacity: 0, y: 18 },
           { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.28 }
         );
       }
 
       if (heroStatsRef.current) {
-        gsap.fromTo(
-          heroStatsRef.current.children,
+        gsap.fromTo(heroStatsRef.current.children,
           { opacity: 0, y: 18 },
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.07,
-            duration: 0.75,
-            ease: "power3.out",
-            delay: 0.42,
-          }
+          { opacity: 1, y: 0, stagger: 0.07, duration: 0.75, ease: "power3.out", delay: 0.42 }
         );
       }
 
@@ -239,39 +195,22 @@ function TreasuresOfKarnatakaPage() {
         const heroImage = heroRef.current.querySelector(".hero-image");
         if (heroImage) {
           gsap.to(heroImage, {
-            yPercent: 6,
-            scale: 1.06,
-            ease: "none",
-            scrollTrigger: {
-              trigger: heroRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
+            yPercent: 6, scale: 1.06, ease: "none",
+            scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true },
           });
         }
       }
 
       cardRefs.current.forEach((card, index) => {
         if (!card) return;
-
-        gsap.fromTo(
-          card,
+        gsap.fromTo(card,
           { opacity: 0, y: 50, filter: "blur(8px)" },
           {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 84%",
-              once: true,
-            },
+            opacity: 1, y: 0, filter: "blur(0px)",
+            duration: 0.9, ease: "power3.out",
+            scrollTrigger: { trigger: card, start: "top 84%", once: true },
           }
         );
-
         ScrollTrigger.create({
           trigger: card,
           start: "top center",
@@ -284,20 +223,12 @@ function TreasuresOfKarnatakaPage() {
       if (timelineSectionRef.current && timelinePathProgressRef.current) {
         const path = timelinePathProgressRef.current;
         const length = path.getTotalLength();
-
-        gsap.set(path, {
-          strokeDasharray: length,
-          strokeDashoffset: length,
-        });
-
+        gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
         gsap.to(path, {
-          strokeDashoffset: 0,
-          ease: "none",
+          strokeDashoffset: 0, ease: "none",
           scrollTrigger: {
             trigger: timelineSectionRef.current,
-            start: "top 18%",
-            end: "bottom 82%",
-            scrub: true,
+            start: "top 18%", end: "bottom 82%", scrub: true,
           },
         });
       }
@@ -320,47 +251,28 @@ function TreasuresOfKarnatakaPage() {
           },
           scrollTrigger: {
             trigger: timelineSectionRef.current,
-            start: "top 18%",
-            end: "bottom 82%",
-            scrub: true,
+            start: "top 18%", end: "bottom 82%", scrub: true,
           },
         });
       }
 
       if (imagePanelRef.current) {
-        gsap.fromTo(
-          imagePanelRef.current,
+        gsap.fromTo(imagePanelRef.current,
           { opacity: 0, y: 30 },
           {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: imagePanelRef.current,
-              start: "top 80%",
-              once: true,
-            },
+            opacity: 1, y: 0, duration: 0.9, ease: "power3.out",
+            scrollTrigger: { trigger: imagePanelRef.current, start: "top 80%", once: true },
           }
         );
       }
 
       if (notesSectionRef.current) {
         const cards = notesSectionRef.current.querySelectorAll(".soft-reveal");
-        gsap.fromTo(
-          cards,
+        gsap.fromTo(cards,
           { opacity: 0, y: 20 },
           {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.12,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: notesSectionRef.current,
-              start: "top 82%",
-              once: true,
-            },
+            opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: "power3.out",
+            scrollTrigger: { trigger: notesSectionRef.current, start: "top 82%", once: true },
           }
         );
       }
@@ -373,12 +285,13 @@ function TreasuresOfKarnatakaPage() {
 
   return (
     <div className="bg-[#f3ede3] text-[#201c17]" ref={rootRef}>
+
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBanner}
-            alt="Treasures of Karnataka"
+            alt="Hampi Escapade"
             className="hero-image h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,8,0.28),rgba(12,10,8,0.52)_35%,rgba(243,237,227,0.84)_82%,#f3ede3_100%)]" />
@@ -393,22 +306,22 @@ function TreasuresOfKarnatakaPage() {
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/25 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#fff2dd] backdrop-blur-sm"
             >
               <Sparkles className="h-3.5 w-3.5 text-[#ffd48a]" />
-              Classic Karnataka Circuit
+              Globo Traveller
             </motion.div>
 
             <h1
               ref={heroTitleRef}
               className="mt-6 max-w-5xl text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#fff7ea] drop-shadow-[0_12px_26px_rgba(0,0,0,0.32)] sm:text-6xl lg:text-8xl"
             >
-              Treasures of Karnataka
+              Hampi Escapade
             </h1>
 
             <p
               ref={heroCopyRef}
               className="mt-5 max-w-2xl text-sm leading-7 text-[#f1e3cf] drop-shadow-[0_8px_18px_rgba(0,0,0,0.22)] sm:text-base"
             >
-              A slower, richer road journey through Hampi's ruins, Murudeshwar's sacred coast,
-              Honnavar's waters, and Gokarna's sunset shoreline.
+              A short, soulful weekend away — coracle rides on Sanapur Lake, a trek to Anjanadri Hill,
+              and quiet walks through Hampi's ancient stone corridors. Every Friday from Hyderabad.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -417,7 +330,7 @@ function TreasuresOfKarnatakaPage() {
                   asChild
                   className="h-12 rounded-full bg-[#fff7ea] px-6 text-sm font-bold text-[#201c17] hover:bg-white"
                 >
-                  <a href="/booking/treasures-of-karnataka?date=24%20Apr%202026">
+                  <a href="/booking/hampi-escapade">
                     Reserve Your Seat
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -426,21 +339,21 @@ function TreasuresOfKarnatakaPage() {
 
               <MagneticButton>
                 <a
-                  href="https://wa.me/917975550990"
+                  href="https://wa.me/916281392007"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-black/20 px-6 text-sm font-semibold text-[#fff7ea] backdrop-blur-sm"
                 >
-                  WhatsApp Concierge
+                  WhatsApp Us
                 </a>
               </MagneticButton>
             </div>
           </div>
 
           <div ref={heroStatsRef} className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            <GlassStat icon={Clock} label="Duration" value="4N / 5D" />
+            <GlassStat icon={Clock} label="Duration" value="2D / 1N" />
             <GlassStat icon={Mountain} label="Difficulty" value="Easy" />
-            <GlassStat icon={Users} label="Age Group" value="12 - 40" />
-            <GlassStat icon={Compass} label="Trip Style" value="Heritage + Coast" />
-            <GlassStat icon={Calendar} label="Departure" value="24 Apr 2026" />
+            <GlassStat icon={Users} label="Min Group" value="10 Adults" />
+            <GlassStat icon={Compass} label="Trip Style" value="Heritage + Nature" />
+            <GlassStat icon={Calendar} label="Departure" value="Every Friday" />
           </div>
         </div>
       </section>
@@ -453,11 +366,12 @@ function TreasuresOfKarnatakaPage() {
               Route overview
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-[#201c17] md:text-5xl">
-              Heritage first, coast after
+              City lights out, ruins in.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[#655949]">
-              The route begins in Hampi with temple landscapes and old stone architecture, then
-              gradually moves toward sea air, sacred coastlines, and slower sunset evenings.
+              Leave Hyderabad on a Friday night and wake up in one of the world's greatest archaeological
+              landscapes. Two full days of ancient temples, boulderscapes, and a lakeside coracle ride —
+              back by Monday morning.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-2">
@@ -490,7 +404,7 @@ function TreasuresOfKarnatakaPage() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-[#201c17]">{item}</p>
-                    <p className="text-xs text-[#7c6f61]">Included in the experience</p>
+                    <p className="text-xs text-[#7c6f61]">Included in the package</p>
                   </div>
                 </div>
               </motion.div>
@@ -503,19 +417,19 @@ function TreasuresOfKarnatakaPage() {
       <section ref={imagePanelRef} className="mx-auto max-w-7xl px-4 py-6 md:px-8">
         <div className="grid gap-5 md:grid-cols-3">
           <DestinationCard
-            title="Hampi"
-            subtitle="Stone chariots, temple corridors, and history in warm light."
+            title="Sanapur Lake"
+            subtitle="Coracle rides, boulder reflections, and the best possible morning in Hampi."
+            image={hampiRiver}
+          />
+          <DestinationCard
+            title="Anegundi & Anjanadri"
+            subtitle="Ancient fort viewpoints and the sacred hill of Lord Hanuman's birthplace."
             image={hampiRuins}
           />
           <DestinationCard
-            title="Murudeshwar"
-            subtitle="Sea-facing shrines and one of Karnataka's most dramatic sacred coastlines."
-            image={gokarnaTemple}
-          />
-          <DestinationCard
-            title="Gokarna"
-            subtitle="Sunset beaches, softer evenings, and a quieter end to the route."
-            image={gokarnaBeach}
+            title="Hampi Temples"
+            subtitle="Stone chariots on the ₹50 note, Virupaksha's quiet sanctum, and Vijayanagara grandeur."
+            image={hampiTemple}
           />
         </div>
       </section>
@@ -530,33 +444,34 @@ function TreasuresOfKarnatakaPage() {
             Journey plan
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#201c17] md:text-5xl">
-            The route unfolds day by day
+            Friday night to Sunday evening
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#6c6053] md:text-[15px]">
-            A continuous route line guides the trip visually from departure to the final return,
-            with each day framed as part of one long overland story.
+            Three days woven into a single, unhurried story — from the overnight bus out of Hyderabad
+            to the last golden hour at Hemakuta Hill.
           </p>
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          {/* SVG path + bus indicator */}
+
+          {/* SVG timeline path + bus */}
           <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-75 -translate-x-1/2 lg:block">
             <svg
               className="absolute left-1/2 top-0 h-full w-65 -translate-x-1/2 overflow-visible"
-              viewBox="0 0 260 2200"
+              viewBox="0 0 260 1400"
               fill="none"
               preserveAspectRatio="none"
             >
               <path
                 ref={timelinePathRef}
-                d="M130 20 C 42 120, 42 240, 130 330 C 218 420, 218 540, 130 630 C 42 720, 42 840, 130 930 C 218 1020, 218 1140, 130 1230 C 42 1320, 42 1440, 130 1530 C 218 1620, 218 1740, 130 1830 C 42 1920, 70 2050, 130 2160"
+                d="M130 20 C 42 130, 42 260, 130 360 C 218 460, 218 590, 130 690 C 42 790, 60 980, 130 1100 C 155 1180, 145 1280, 130 1360"
                 stroke="#d8c8b3"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
               <path
                 ref={timelinePathProgressRef}
-                d="M130 20 C 42 120, 42 240, 130 330 C 218 420, 218 540, 130 630 C 42 720, 42 840, 130 930 C 218 1020, 218 1140, 130 1230 C 42 1320, 42 1440, 130 1530 C 218 1620, 218 1740, 130 1830 C 42 1920, 70 2050, 130 2160"
+                d="M130 20 C 42 130, 42 260, 130 360 C 218 460, 218 590, 130 690 C 42 790, 60 980, 130 1100 C 155 1180, 145 1280, 130 1360"
                 stroke="#b08a57"
                 strokeWidth="3"
                 strokeLinecap="round"
@@ -580,9 +495,7 @@ function TreasuresOfKarnatakaPage() {
               return (
                 <div
                   key={item.day}
-                  ref={(el) => {
-                    cardRefs.current[index] = el;
-                  }}
+                  ref={(el) => { cardRefs.current[index] = el; }}
                   className="relative grid items-center gap-6 lg:grid-cols-2"
                 >
                   <div className={isLeft ? "lg:pr-20" : "lg:order-2 lg:pl-20"}>
@@ -633,7 +546,7 @@ function TreasuresOfKarnatakaPage() {
                           <div className="mt-3 space-y-2">
                             {item.notes.map((note) => (
                               <p key={note} className="text-xs leading-6 text-[#6b5e50]">
-                                - {note}
+                                — {note}
                               </p>
                             ))}
                           </div>
@@ -661,6 +574,8 @@ function TreasuresOfKarnatakaPage() {
       {/* ── NOTES + BOOKING ── */}
       <section ref={notesSectionRef} className="mx-auto max-w-7xl px-4 pb-24 md:px-8">
         <div className="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
+
+          {/* Important Notes */}
           <div className="soft-reveal rounded-[30px] border border-[#ddd1c0] bg-[#fbf7f1] p-6 md:p-7">
             <h2 className="inline-flex items-center gap-2 text-2xl font-black tracking-[-0.03em] text-[#201c17]">
               <HeartPulse className="h-5 w-5 text-[#b08a57]" />
@@ -668,14 +583,30 @@ function TreasuresOfKarnatakaPage() {
             </h2>
 
             <ul className="mt-5 space-y-3 text-sm leading-7 text-[#645949]">
-              <li>- Bus pickup and arrival timing can vary due to traffic and road conditions.</li>
-              <li>- Carry a neck pillow for the overnight travel segments.</li>
-              <li>- Cliff jumping and Honnavar boating are condition-based for safety.</li>
-              <li>- Temple visits require modest clothing.</li>
-              <li>- Keep hydration and easy footwear for temple and market walks.</li>
+              <li>— Trip departs every Friday at ~10 PM from Hyderabad; back by Monday morning.</li>
+              <li>— Minimum 10 travellers required to confirm the trip.</li>
+              <li>— Advance of ₹1,000/adult required to reserve; full payment if booking within 1 day of departure.</li>
+              <li>— Entry fees for monuments, coracle ride, and other activities are not included.</li>
+              <li>— Stays are on sharing basis; room upgrades available at additional cost.</li>
+              <li>— Modest clothing required for all temple visits.</li>
+              <li>— Rates may vary during peak season (Diwali, Christmas, New Year).</li>
             </ul>
+
+            {/* Pricing */}
+            <div className="mt-6 rounded-4xl border border-[#e1d5c5] bg-[#f8f2e9] p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8b7b68]">
+                Pricing (+ 5% GST)
+              </p>
+              <div className="mt-3 space-y-2 text-xs leading-6 text-[#6b5e50]">
+                <p>6–8 Sharing Dorm — ₹4,499 / adult</p>
+                <p>4-Sharing Room — ₹4,999 / adult</p>
+                <p>3-Sharing Room — ₹5,299 / adult</p>
+                <p>2-Sharing (Couple Room) — ₹5,499 / adult</p>
+              </div>
+            </div>
           </div>
 
+          {/* Booking CTA */}
           <div className="soft-reveal relative overflow-hidden rounded-[30px] border border-[#ddd1c0] bg-[#201c17] p-6 md:p-8">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#b08a57]/10 blur-3xl" />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -684,11 +615,14 @@ function TreasuresOfKarnatakaPage() {
                   Booking
                 </p>
                 <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#f6efe5]">
-                  Designed like a refined travel journal
+                  Weekend well spent. Every Friday.
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-[#d1c1ad]">
-                  Cinematic photography, a classic route line, and quieter motion help the page feel
-                  more premium and destination-led.
+                  Pack light, join strangers, return with stories. Travloger handles the rest —
+                  vehicle, stay, leader, and a local guide who brings Hampi's history to life.
+                </p>
+                <p className="mt-3 text-xs text-[#a08878]">
+                  hello@travloger.in · +91 62813 92007 · travloger.in
                 </p>
               </div>
 
@@ -698,13 +632,13 @@ function TreasuresOfKarnatakaPage() {
                     asChild
                     className="h-12 rounded-full bg-[#f1e4d0] px-6 text-sm font-bold text-[#1e1913] hover:bg-[#eadbc2]"
                   >
-                    <a href="/booking/treasures-of-karnataka?date=24%20Apr%202026">Book Now</a>
+                    <a href="/booking/hampi-escapade">Book Now</a>
                   </Button>
                 </MagneticButton>
 
                 <MagneticButton>
                   <a
-                    href="https://wa.me/917975550990"
+                    href="https://wa.me/916281392007"
                     className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-semibold text-[#f5ece1]"
                   >
                     WhatsApp
@@ -719,13 +653,16 @@ function TreasuresOfKarnatakaPage() {
       {/* ── FOOTER ── */}
       <section className="border-t border-[#ded1c0]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs text-[#7e705f] md:flex-row md:items-center md:justify-between md:px-8">
-          <p>Treasures of Karnataka</p>
-          <p>Pune — Hampi — Murudeshwar — Honnavar — Gokarna</p>
+          <p>Travloger India · Hampi Escapade</p>
+          <p>Hyderabad — Hampi — Hyderabad · Every Friday</p>
+          <p>GSTIN: 36AAWFD8280H1ZS</p>
         </div>
       </section>
     </div>
   );
 }
+
+// ── SUB-COMPONENTS (unchanged) ────────────────────────────────────────────────
 
 function DestinationCard({
   title,
@@ -782,43 +719,26 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     const strength = 22;
 
     const handleMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-
-      gsap.to(el, {
-        x: x / strength,
-        y: y / strength,
-        duration: 0.3,
-        ease: "power3.out",
-      });
+      gsap.to(el, { x: x / strength, y: y / strength, duration: 0.3, ease: "power3.out" });
     };
 
     const handleLeave = () => {
-      gsap.to(el, {
-        x: 0,
-        y: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      });
+      gsap.to(el, { x: 0, y: 0, duration: 0.4, ease: "power3.out" });
     };
 
     el.addEventListener("mousemove", handleMove);
     el.addEventListener("mouseleave", handleLeave);
-
     return () => {
       el.removeEventListener("mousemove", handleMove);
       el.removeEventListener("mouseleave", handleLeave);
     };
   }, []);
 
-  return (
-    <div ref={ref} className="will-change-transform">
-      {children}
-    </div>
-  );
+  return <div ref={ref} className="will-change-transform">{children}</div>;
 }

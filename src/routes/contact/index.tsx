@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/contact/")({
   head: () => ({
     meta: [
       { title: "Contact — Globo Traveller" },
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   return (
-    <div className="bg-gradient-to-b from-primary-soft/40 to-background">
+    <div className="bg-linear-to-b from-primary-soft/40 to-background">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-8 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-wider text-primary">Contact</p>
         <h1 className="mt-1 font-display text-4xl font-extrabold sm:text-5xl">Let's plan something epic</h1>
@@ -60,7 +60,7 @@ function Contact() {
             <ContactCard icon={MapPin} title="Office" text="Indiranagar, Bengaluru" />
             <a
               href="https://wa.me/917975550990"
-              className="flex items-center gap-3 rounded-2xl bg-[var(--whatsapp)] p-4 text-white shadow-soft"
+              className="flex items-center gap-3 rounded-2xl bg-whatsapp p-4 text-white shadow-soft"
             >
               <MessageCircle className="h-5 w-5" />
               <div>

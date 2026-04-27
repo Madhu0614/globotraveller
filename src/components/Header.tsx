@@ -18,7 +18,7 @@ const desktopLeft = [
 ];
 
 const desktopRight = [
-  { label: "Blogs", to: "/faq" },
+  { label: "Blogs", to: "/blogs" },
   { label: "About Us", to: "/about" },
   { label: "Travel Guide", to: "/faq", emphasized: true },
 ];
@@ -36,7 +36,7 @@ const mobileNav: MobileNavItem[] = [
       { label: "Rajasthan", to: "/trips?destination=rajasthan" },
     ],
   },
-  { label: "Blogs", to: "/faq" },
+  { label: "Blogs", to: "/blogs" },
   { label: "About Us", to: "/about" },
   { label: "Travel Guide", to: "/faq" },
   { label: "Contact", to: "/contact" },
@@ -74,7 +74,7 @@ export function Header() {
             scrolled && "bg-white/96"
           )}
         >
-          <div className="hidden min-h-[58px] items-center justify-between gap-5 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+          <div className="hidden min-h-14.5 items-center justify-between gap-5 lg:grid lg:grid-cols-[1fr_auto_1fr]">
             <div className="flex items-center gap-3 justify-self-start">
               <a
                 href="mailto:hello@globotraveller.in"
@@ -120,7 +120,7 @@ export function Header() {
             </nav>
           </div>
 
-          <div className="flex min-h-[46px] items-center justify-between gap-3 lg:hidden">
+          <div className="flex min-h-11.5 items-center justify-between gap-3 lg:hidden">
             <a
               href="mailto:hello@globotraveller.in"
               className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground"
@@ -136,7 +136,7 @@ export function Header() {
                 href="https://wa.me/917975550990"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden items-center gap-1 rounded-lg border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground/80 transition hover:border-[var(--whatsapp)] hover:text-[var(--whatsapp)] sm:inline-flex"
+                className="hidden items-center gap-1 rounded-lg border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground/80 transition hover:border-whatsapp hover:text-whatsapp sm:inline-flex"
               >
                 <MessageCircle className="h-3.5 w-3.5" />
                 WhatsApp
@@ -209,7 +209,7 @@ export function Header() {
                       rel="noopener noreferrer"
                       className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground"
                     >
-                      <MessageCircle className="h-4 w-4 text-[var(--whatsapp)]" />
+                      <MessageCircle className="h-4 w-4 text-whatsapp" />
                       Chat on WhatsApp
                     </a>
                   </div>

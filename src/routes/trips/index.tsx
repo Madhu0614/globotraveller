@@ -11,7 +11,7 @@ interface TripsSearch {
   q?: string;
 }
 
-export const Route = createFileRoute("/trips")({
+export const Route = createFileRoute("/trips/")({
   validateSearch: (search: Record<string, unknown>): TripsSearch => ({
     category: search.category as TripCategory | undefined,
     q: typeof search.q === "string" ? search.q : undefined,
@@ -136,7 +136,7 @@ function TripsPage() {
   );
 
   return (
-    <div className="bg-gradient-to-b from-primary-soft/40 to-background">
+    <div className="bg-linear-to-b from-primary-soft/40 to-background">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
         <header className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Trips</p>
