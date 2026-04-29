@@ -41,11 +41,6 @@ const SORTS = ["Recommended", "Price: Low to High", "Price: High to Low", "Highe
 
 function TripsPage() {
   const { pathname } = useLocation();
-
-  if (pathname !== "/trips") {
-    return <Outlet />;
-  }
-
   const search = Route.useSearch();
   const [category, setCategory] = useState<TripCategory | "all">(search.category ?? "all");
   const [duration, setDuration] = useState("Any");
@@ -53,6 +48,7 @@ function TripsPage() {
   const [difficulty, setDifficulty] = useState("Any");
   const [sort, setSort] = useState("Recommended");
   const [q, setQ] = useState(search.q ?? "");
+  const isTripsIndex = pathname === "/trips" || pathname === "/trips/";
 
   const filtered = useMemo(() => {
     let list = trips.filter((t) => {
@@ -82,6 +78,10 @@ function TripsPage() {
     setSort("Recommended");
     setQ("");
   };
+
+  if (!isTripsIndex) {
+    return <Outlet />;
+  }
 
   const Filters = (
     <div className="space-y-6">

@@ -498,7 +498,6 @@ function About() {
       <section className="border-t border-[#ded1c0]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs text-[#7e705f] md:flex-row md:items-center md:justify-between md:px-8">
           <p>Travloger India · New Nallakunta, Hyderabad 500044</p>
-          <p>GSTIN: 36AAWFD8280H1ZS</p>
           <div className="flex gap-4">
             <a
               href="https://instagram.com/travloger.in"

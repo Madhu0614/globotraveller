@@ -15,8 +15,14 @@ import { Route as TripsIndexRouteImport } from './routes/trips/index'
 import { Route as FaqIndexRouteImport } from './routes/faq/index'
 import { Route as ContactIndexRouteImport } from './routes/contact/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
+import { Route as TripsWayanadRouteImport } from './routes/trips/wayanad'
 import { Route as TripsTreasuresOfKarnatakaRouteImport } from './routes/trips/treasures-of-karnataka'
-import { Route as TripsSlugRouteImport } from './routes/trips/$slug'
+import { Route as TripsOoty_and_coonoorRouteImport } from './routes/trips/ooty_and_coonoor'
+import { Route as TripsKallu_falls_harishchandragadRouteImport } from './routes/trips/kallu_falls_harishchandragad'
+import { Route as TripsIsha_ootyRouteImport } from './routes/trips/isha_ooty'
+import { Route as TripsGokarna_dandeliRouteImport } from './routes/trips/gokarna_dandeli'
+import { Route as TripsArakuRouteImport } from './routes/trips/araku'
+import { Route as TripsArunachalam_PondicherryRouteImport } from './routes/trips/Arunachalam_Pondicherry'
 import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
 import { Route as LegalCancellationRouteImport } from './routes/legal/cancellation'
@@ -35,9 +41,9 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const TripsIndexRoute = TripsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => TripsRoute,
+  id: '/trips/',
+  path: '/trips/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const FaqIndexRoute = FaqIndexRouteImport.update({
   id: '/faq/',
@@ -54,17 +60,49 @@ const BlogsIndexRoute = BlogsIndexRouteImport.update({
   path: '/blogs/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TripsWayanadRoute = TripsWayanadRouteImport.update({
+  id: '/trips/wayanad',
+  path: '/trips/wayanad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TripsTreasuresOfKarnatakaRoute =
   TripsTreasuresOfKarnatakaRouteImport.update({
     id: '/trips/treasures-of-karnataka',
     path: '/trips/treasures-of-karnataka',
     getParentRoute: () => rootRouteImport,
   } as any)
-const TripsSlugRoute = TripsSlugRouteImport.update({
-  id: '/trips/$slug',
-  path: '/trips/$slug',
+const TripsOoty_and_coonoorRoute = TripsOoty_and_coonoorRouteImport.update({
+  id: '/trips/ooty_and_coonoor',
+  path: '/trips/ooty_and_coonoor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TripsKallu_falls_harishchandragadRoute =
+  TripsKallu_falls_harishchandragadRouteImport.update({
+    id: '/trips/kallu_falls_harishchandragad',
+    path: '/trips/kallu_falls_harishchandragad',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TripsIsha_ootyRoute = TripsIsha_ootyRouteImport.update({
+  id: '/trips/isha_ooty',
+  path: '/trips/isha_ooty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsGokarna_dandeliRoute = TripsGokarna_dandeliRouteImport.update({
+  id: '/trips/gokarna_dandeli',
+  path: '/trips/gokarna_dandeli',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsArakuRoute = TripsArakuRouteImport.update({
+  id: '/trips/araku',
+  path: '/trips/araku',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsArunachalam_PondicherryRoute =
+  TripsArunachalam_PondicherryRouteImport.update({
+    id: '/trips/Arunachalam_Pondicherry',
+    path: '/trips/Arunachalam_Pondicherry',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LegalTermsRoute = LegalTermsRouteImport.update({
   id: '/legal/terms',
   path: '/legal/terms',
@@ -105,8 +143,14 @@ export interface FileRoutesByFullPath {
   '/legal/cancellation': typeof LegalCancellationRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
-  '/trips/$slug': typeof TripsSlugRoute
+  '/trips/Arunachalam_Pondicherry': typeof TripsArunachalam_PondicherryRoute
+  '/trips/araku': typeof TripsArakuRoute
+  '/trips/gokarna_dandeli': typeof TripsGokarna_dandeliRoute
+  '/trips/isha_ooty': typeof TripsIsha_ootyRoute
+  '/trips/kallu_falls_harishchandragad': typeof TripsKallu_falls_harishchandragadRoute
+  '/trips/ooty_and_coonoor': typeof TripsOoty_and_coonoorRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/trips/wayanad': typeof TripsWayanadRoute
   '/blogs/': typeof BlogsIndexRoute
   '/contact/': typeof ContactIndexRoute
   '/faq/': typeof FaqIndexRoute
@@ -121,8 +165,14 @@ export interface FileRoutesByTo {
   '/legal/cancellation': typeof LegalCancellationRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
-  '/trips/$slug': typeof TripsSlugRoute
+  '/trips/Arunachalam_Pondicherry': typeof TripsArunachalam_PondicherryRoute
+  '/trips/araku': typeof TripsArakuRoute
+  '/trips/gokarna_dandeli': typeof TripsGokarna_dandeliRoute
+  '/trips/isha_ooty': typeof TripsIsha_ootyRoute
+  '/trips/kallu_falls_harishchandragad': typeof TripsKallu_falls_harishchandragadRoute
+  '/trips/ooty_and_coonoor': typeof TripsOoty_and_coonoorRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/trips/wayanad': typeof TripsWayanadRoute
   '/blogs': typeof BlogsIndexRoute
   '/contact': typeof ContactIndexRoute
   '/faq': typeof FaqIndexRoute
@@ -138,8 +188,14 @@ export interface FileRoutesById {
   '/legal/cancellation': typeof LegalCancellationRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
-  '/trips/$slug': typeof TripsSlugRoute
+  '/trips/Arunachalam_Pondicherry': typeof TripsArunachalam_PondicherryRoute
+  '/trips/araku': typeof TripsArakuRoute
+  '/trips/gokarna_dandeli': typeof TripsGokarna_dandeliRoute
+  '/trips/isha_ooty': typeof TripsIsha_ootyRoute
+  '/trips/kallu_falls_harishchandragad': typeof TripsKallu_falls_harishchandragadRoute
+  '/trips/ooty_and_coonoor': typeof TripsOoty_and_coonoorRoute
   '/trips/treasures-of-karnataka': typeof TripsTreasuresOfKarnatakaRoute
+  '/trips/wayanad': typeof TripsWayanadRoute
   '/blogs/': typeof BlogsIndexRoute
   '/contact/': typeof ContactIndexRoute
   '/faq/': typeof FaqIndexRoute
@@ -156,8 +212,14 @@ export interface FileRouteTypes {
     | '/legal/cancellation'
     | '/legal/privacy'
     | '/legal/terms'
-    | '/trips/$slug'
+    | '/trips/Arunachalam_Pondicherry'
+    | '/trips/araku'
+    | '/trips/gokarna_dandeli'
+    | '/trips/isha_ooty'
+    | '/trips/kallu_falls_harishchandragad'
+    | '/trips/ooty_and_coonoor'
     | '/trips/treasures-of-karnataka'
+    | '/trips/wayanad'
     | '/blogs/'
     | '/contact/'
     | '/faq/'
@@ -172,8 +234,14 @@ export interface FileRouteTypes {
     | '/legal/cancellation'
     | '/legal/privacy'
     | '/legal/terms'
-    | '/trips/$slug'
+    | '/trips/Arunachalam_Pondicherry'
+    | '/trips/araku'
+    | '/trips/gokarna_dandeli'
+    | '/trips/isha_ooty'
+    | '/trips/kallu_falls_harishchandragad'
+    | '/trips/ooty_and_coonoor'
     | '/trips/treasures-of-karnataka'
+    | '/trips/wayanad'
     | '/blogs'
     | '/contact'
     | '/faq'
@@ -188,8 +256,14 @@ export interface FileRouteTypes {
     | '/legal/cancellation'
     | '/legal/privacy'
     | '/legal/terms'
-    | '/trips/$slug'
+    | '/trips/Arunachalam_Pondicherry'
+    | '/trips/araku'
+    | '/trips/gokarna_dandeli'
+    | '/trips/isha_ooty'
+    | '/trips/kallu_falls_harishchandragad'
+    | '/trips/ooty_and_coonoor'
     | '/trips/treasures-of-karnataka'
+    | '/trips/wayanad'
     | '/blogs/'
     | '/contact/'
     | '/faq/'
@@ -205,11 +279,18 @@ export interface RootRouteChildren {
   LegalCancellationRoute: typeof LegalCancellationRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
   LegalTermsRoute: typeof LegalTermsRoute
-  TripsSlugRoute: typeof TripsSlugRoute
+  TripsArunachalam_PondicherryRoute: typeof TripsArunachalam_PondicherryRoute
+  TripsArakuRoute: typeof TripsArakuRoute
+  TripsGokarna_dandeliRoute: typeof TripsGokarna_dandeliRoute
+  TripsIsha_ootyRoute: typeof TripsIsha_ootyRoute
+  TripsKallu_falls_harishchandragadRoute: typeof TripsKallu_falls_harishchandragadRoute
+  TripsOoty_and_coonoorRoute: typeof TripsOoty_and_coonoorRoute
   TripsTreasuresOfKarnatakaRoute: typeof TripsTreasuresOfKarnatakaRoute
+  TripsWayanadRoute: typeof TripsWayanadRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
   ContactIndexRoute: typeof ContactIndexRoute
   FaqIndexRoute: typeof FaqIndexRoute
+  TripsIndexRoute: typeof TripsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -230,10 +311,10 @@ declare module '@tanstack/react-router' {
     }
     '/trips/': {
       id: '/trips/'
-      path: '/'
+      path: '/trips'
       fullPath: '/trips/'
       preLoaderRoute: typeof TripsIndexRouteImport
-      parentRoute: typeof TripsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/faq/': {
       id: '/faq/'
@@ -256,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trips/wayanad': {
+      id: '/trips/wayanad'
+      path: '/trips/wayanad'
+      fullPath: '/trips/wayanad'
+      preLoaderRoute: typeof TripsWayanadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trips/treasures-of-karnataka': {
       id: '/trips/treasures-of-karnataka'
       path: '/trips/treasures-of-karnataka'
@@ -263,11 +351,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TripsTreasuresOfKarnatakaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/trips/$slug': {
-      id: '/trips/$slug'
-      path: '/trips/$slug'
-      fullPath: '/trips/$slug'
-      preLoaderRoute: typeof TripsSlugRouteImport
+    '/trips/ooty_and_coonoor': {
+      id: '/trips/ooty_and_coonoor'
+      path: '/trips/ooty_and_coonoor'
+      fullPath: '/trips/ooty_and_coonoor'
+      preLoaderRoute: typeof TripsOoty_and_coonoorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/kallu_falls_harishchandragad': {
+      id: '/trips/kallu_falls_harishchandragad'
+      path: '/trips/kallu_falls_harishchandragad'
+      fullPath: '/trips/kallu_falls_harishchandragad'
+      preLoaderRoute: typeof TripsKallu_falls_harishchandragadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/isha_ooty': {
+      id: '/trips/isha_ooty'
+      path: '/trips/isha_ooty'
+      fullPath: '/trips/isha_ooty'
+      preLoaderRoute: typeof TripsIsha_ootyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/gokarna_dandeli': {
+      id: '/trips/gokarna_dandeli'
+      path: '/trips/gokarna_dandeli'
+      fullPath: '/trips/gokarna_dandeli'
+      preLoaderRoute: typeof TripsGokarna_dandeliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/araku': {
+      id: '/trips/araku'
+      path: '/trips/araku'
+      fullPath: '/trips/araku'
+      preLoaderRoute: typeof TripsArakuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips/Arunachalam_Pondicherry': {
+      id: '/trips/Arunachalam_Pondicherry'
+      path: '/trips/Arunachalam_Pondicherry'
+      fullPath: '/trips/Arunachalam_Pondicherry'
+      preLoaderRoute: typeof TripsArunachalam_PondicherryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/legal/terms': {
@@ -324,11 +447,19 @@ const rootRouteChildren: RootRouteChildren = {
   LegalCancellationRoute: LegalCancellationRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,
   LegalTermsRoute: LegalTermsRoute,
-  TripsSlugRoute: TripsSlugRoute,
+  TripsArunachalam_PondicherryRoute: TripsArunachalam_PondicherryRoute,
+  TripsArakuRoute: TripsArakuRoute,
+  TripsGokarna_dandeliRoute: TripsGokarna_dandeliRoute,
+  TripsIsha_ootyRoute: TripsIsha_ootyRoute,
+  TripsKallu_falls_harishchandragadRoute:
+    TripsKallu_falls_harishchandragadRoute,
+  TripsOoty_and_coonoorRoute: TripsOoty_and_coonoorRoute,
   TripsTreasuresOfKarnatakaRoute: TripsTreasuresOfKarnatakaRoute,
+  TripsWayanadRoute: TripsWayanadRoute,
   BlogsIndexRoute: BlogsIndexRoute,
   ContactIndexRoute: ContactIndexRoute,
   FaqIndexRoute: FaqIndexRoute,
+  TripsIndexRoute: TripsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

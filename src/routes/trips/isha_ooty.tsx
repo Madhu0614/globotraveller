@@ -11,6 +11,7 @@ import {
   MapPin,
   Mountain,
   Sparkles,
+  Train,
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,11 +21,11 @@ import SplitType from "split-type";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import heroBanner from "@/assets/Treasures_of_Karnataka.webp";
-import hampiHero from "@/assets/Hyderabad.webp";
-import hampiTemple from "@/assets/hampip1.jpg.jpeg";
-import hampiRiver from "@/assets/hampip2.jpg.jpeg";
-import hampiRuins from "@/assets/hampip3.webp";
+import heroBanner from "@/assets/Ooty_Coonoor.jpg";
+import ishaHero from "@/assets/Hyderabad.webp";
+import ishaAshram from "@/assets/Isha_Ooty.jpg";
+import coonoorTrain from "@/assets/Toy_Train_Coonoor_Tea Gardens.jpg";
+import ootyPine from "@/assets/Needle_Rock.jpg";
 
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -35,105 +36,123 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const itinerary = [
   {
-    day: "Day 0 — Friday Night",
+    day: "Day 0 — Thu / Fri Night",
     title: "Departure from Hyderabad",
-    subtitle: "The city fades out, the adventure begins.",
-    image: hampiHero,
+    subtitle: "The city lights fade, the Nilgiris await.",
+    image: ishaHero,
     points: [
-      "10:00 PM — Near Rayalaseema Ruchulu, Lakdikapul.",
-      "10:30 PM — Near Bikanervala, Aramghar.",
-      "10:45 PM — Nehru ORR Exit 16, Shamshabad.",
-      "Overnight journey to Hampi in a private MUV / Tempo Traveller.",
-      "Midnight chatter, travel games, and a crew of fellow explorers.",
+      "7:00 PM — Kacheguda Railway Station, Hyderabad.",
+      "Board your sleeper train bound for Mysore.",
+      "Overnight journey across the Deccan and into the foothills.",
+      "Arrive Mysore by 9:40 AM the next morning.",
     ],
     meals: "None",
     notes: [
-      "Arrive at your pickup point at least 15 minutes before the scheduled time.",
-      "Trip confirms only if at least 10 travellers have reserved — you'll be notified in advance.",
-      "Timings are approximate and may vary due to traffic conditions.",
+      "Arrive at Kacheguda Railway Station at least 20 minutes before departure.",
+      "Departures run every Thursday and Friday at 7:00 PM.",
+      "Sleeper class train tickets (both ways) are included in the package.",
     ],
   },
   {
-    day: "Day 1 — Saturday",
-    title: "Coracle Ride · Anegundi Fort · Anjanadri Hill",
-    subtitle: "Boulders, history, and a golden Tungabhadra sunset.",
-    image: hampiRiver,
+    day: "Day 1 — Morning to Night",
+    title: "Mysore · Isha Yoga Centre · Coimbatore",
+    subtitle: "The Adiyogi face, the evening aarti, and a bonfire under the stars.",
+    image: ishaAshram,
     points: [
-      "Early morning arrival in Hampi — straight to Sanapur Lake for a coracle ride amid iconic boulder landscapes.",
-      "Check-in, breakfast, and freshen up at the experiential stay near the sunrise point.",
-      "Explore Anegundi Fort — one of the oldest parts of Hampi with stunning viewpoints and rustic charm.",
-      "Lunch at a local café in Hampi.",
-      "Anjanadri Hill trek — believed to be the birthplace of Lord Hanuman. Short, scenic climb with a spectacular view.",
-      "Sunset from the hilltop paints the entire Tungabhadra valley in gold.",
-      "Return to stay: bonfire, dinner, and fun group games.",
+      "Reach Mysore by 9:40 AM — freshen up at the hotel rooms (30 minutes).",
+      "Board the pre-hired Tempo Traveller and drive toward Coimbatore.",
+      "Arrive at Isha Yoga Centre — visit Adiyogi, the 112-foot face of Shiva.",
+      "Explore the ashram grounds at leisure.",
+      "Evening Aarti at the ashram — a deeply immersive spiritual experience.",
+      "Music, dispersal, and bonfire at night.",
+      "Overnight stay in Coimbatore.",
     ],
-    meals: "Breakfast & Lunch",
+    meals: "None",
     notes: [
-      "Coracle ride is subject to water-level conditions at Sanapur Lake.",
-      "The Anjanadri Hill trek is beginner-friendly — roughly 570 steps.",
-      "Carry comfortable footwear, sunscreen, and personal hydration.",
+      "Modest dress is mandatory at the Isha Yoga Centre — avoid shorts and sleeveless tops.",
+      "Entry tickets and darshan fees at Isha are not included in the package.",
+      "Photography rules at the ashram must be followed at all times.",
     ],
   },
   {
-    day: "Day 2 — Sunday",
-    title: "Vijaya Vittala · Lotus Mahal · Virupaksha",
-    subtitle: "Stone chariots, ancient empires, and a heritage farewell.",
-    image: hampiTemple,
+    day: "Day 2 — Full Day",
+    title: "Coonoor · Toy Train · Ooty",
+    subtitle: "Dolphin's Nose, a century-old mountain railway, and chocolate at 2,240 m.",
+    image: coonoorTrain,
     points: [
-      "Morning breakfast before diving into Hampi's most iconic landmarks.",
-      "Vijaya Vittala Temple — home to the legendary Stone Chariot featured on the ₹50 note.",
-      "Lotus Mahal, Elephant Stables, and Hazara Rama Temple — each a chapter from the Vijayanagara Empire.",
-      "Lunch at a local café near Hampi Bazaar.",
-      "Virupaksha Temple — one of India's oldest functioning temples, filled with deep spiritual energy.",
-      "Hampi Museum for a quick glimpse into ancient history.",
-      "Hemakuta Hill for the final sunset view, then depart for Hyderabad.",
-      "Arrive back in Hyderabad early Monday morning.",
+      "Wake up by 5:00 AM — freshen up and start toward Coonoor.",
+      "Dolphin's Nose View Point — dramatic overhang with a sheer drop into misty valley.",
+      "Toy Train from Coonoor to Ooty — a UNESCO World Heritage mountain railway through tea estates.",
+      "Tea Garden & Factory visit — see how Nilgiri tea is grown, plucked, and processed.",
+      "Chocolate Museum — taste artisan chocolates made from Ooty's highland cocoa.",
+      "Check into your stay in Ooty for the night.",
     ],
-    meals: "Breakfast & Lunch",
+    meals: "None",
     notes: [
-      "Temple entry requires modest clothing — avoid sleeveless tops and shorts.",
-      "Entry fees for monuments and activities not mentioned are payable separately.",
-      "Departure from Hampi by evening; estimated Hyderabad arrival is Monday early morning.",
+      "Toy Train tickets are not included — book early as seats fill up fast.",
+      "The Coonoor–Ooty toy train ride takes approximately 1.5 hours.",
+      "Carry a light jacket — Ooty temperatures drop sharply after sunset.",
+    ],
+  },
+  {
+    day: "Day 3 — Morning",
+    title: "Needle Rock · Bandipur Forest · Pine Forest · Mysore · Departure",
+    subtitle: "Misty ridges, wildlife corridors, and the last stretch home.",
+    image: ootyPine,
+    points: [
+      "Wake up and freshen up in Ooty.",
+      "Needle Rock View Point — a volcanic rock pinnacle jutting out of the Nilgiri ridgeline.",
+      "Bandipur Forest drive — transit through one of India's premier tiger reserves.",
+      "Shooting Point and Pine Forest — iconic Ooty landscapes made famous by Bollywood.",
+      "Drive back toward Mysore.",
+      "Board the return train from Mysore by evening.",
+      "Arrive back in Hyderabad by 5:40 AM the next morning.",
+    ],
+    meals: "None",
+    notes: [
+      "Bandipur Forest transit is subject to forest department timings — no stops permitted.",
+      "Return train departure from Mysore — timings shared closer to the trip date.",
+      "A one-way surcharge of ₹400–500 may apply depending on train availability.",
     ],
   },
 ];
 
 
 const includes = [
-  "Pick-up & Drop",
-  "Private Vehicle",
-  "Accommodation",
-  "Trip Leader",
-  "Local Guide",
-  "Tolls & Taxes",
+  "Train Tickets (2-way)",
+  "2 Nights Accommodation",
+  "Mysore–Mysore Tempo",
+  "Trip Host",
+  "Driver & Tolls",
+  "Travel Charges",
 ];
 
 
-const routeStops = ["Hyderabad", "Hampi"];
+const routeStops = ["Hyderabad", "Mysore", "Isha Ashram", "Coonoor", "Ooty"];
 
 
 // ── ROUTE ────────────────────────────────────────────────────────────────────
 
 
-export const Route = createFileRoute("/trips/treasures-of-karnataka")({
+export const Route = createFileRoute("/trips/isha_ooty")({
   head: () => ({
     meta: [
-      { title: "Hampi Escapade — 2D 1N Weekend Getaway from Hyderabad" },
+      { title: "Isha & Ooty — 2N 3D Weekend Getaway from Hyderabad" },
       {
         name: "description",
         content:
-          "A premium weekend itinerary page for Travloger's Hampi Escapade — coracle rides, Anjanadri Hill trek, Vijaya Vittala Temple, and ancient ruins. Ex-Hyderabad, every Friday.",
+          "A premium weekend itinerary for Travloger's Isha & Ooty — Adiyogi, evening aarti, Dolphin's Nose, UNESCO toy train, tea gardens, and Nilgiri pine forests. Ex-Hyderabad, every Thu & Fri.",
       },
     ],
   }),
-  component: HampiEscapadePage,
+  component: IshaOotyPage,
 });
 
 
 // ── PAGE ─────────────────────────────────────────────────────────────────────
 
 
-function HampiEscapadePage() {
+function IshaOotyPage() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
   const heroTitleRef = useRef<HTMLHeadingElement | null>(null);
@@ -313,7 +332,7 @@ function HampiEscapadePage() {
 
 
   return (
-    <div className="bg-[#f3ede3] text-[#201c17]" ref={rootRef}>
+    <div className="bg-[#f0ede8] text-[#1c1814]" ref={rootRef}>
 
 
       {/* ── HERO ── */}
@@ -321,10 +340,10 @@ function HampiEscapadePage() {
         <div className="absolute inset-0">
           <img
             src={heroBanner}
-            alt="Hampi Escapade"
+            alt="Isha & Ooty"
             className="hero-image h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,8,0.28),rgba(12,10,8,0.52)_35%,rgba(243,237,227,0.84)_82%,#f3ede3_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,8,6,0.28),rgba(10,8,6,0.52)_35%,rgba(240,237,232,0.84)_82%,#f0ede8_100%)]" />
         </div>
 
 
@@ -334,27 +353,28 @@ function HampiEscapadePage() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/25 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#fff2dd] backdrop-blur-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/25 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f5ede0] backdrop-blur-sm"
             >
-              <Sparkles className="h-3.5 w-3.5 text-[#ffd48a]" />
+              <Sparkles className="h-3.5 w-3.5 text-[#e8c97a]" />
               Globo Traveller
             </motion.div>
 
 
             <h1
               ref={heroTitleRef}
-              className="mt-6 max-w-5xl text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#fff7ea] drop-shadow-[0_12px_26px_rgba(0,0,0,0.32)] sm:text-6xl lg:text-8xl"
+              className="mt-6 max-w-5xl text-4xl font-black leading-[0.92] tracking-[-0.05em] text-[#fdf6ec] drop-shadow-[0_12px_26px_rgba(0,0,0,0.32)] sm:text-6xl lg:text-8xl"
             >
-              Hampi Escapade
+              Isha & Ooty
             </h1>
 
 
             <p
               ref={heroCopyRef}
-              className="mt-5 max-w-2xl text-sm leading-7 text-[#f1e3cf] drop-shadow-[0_8px_18px_rgba(0,0,0,0.22)] sm:text-base"
+              className="mt-5 max-w-2xl text-sm leading-7 text-[#ddd0bc] drop-shadow-[0_8px_18px_rgba(0,0,0,0.22)] sm:text-base"
             >
-              A short, soulful weekend away — coracle rides on Sanapur Lake, a trek to Anjanadri Hill,
-              and quiet walks through Hampi's ancient stone corridors. Every Friday from Hyderabad.
+              Stand before the 112-foot Adiyogi at dusk, ride the UNESCO toy train through
+              Nilgiri tea estates, and walk into pine forests at 2,240 metres —
+              all in a single weekend from Hyderabad, by train.
             </p>
 
 
@@ -362,9 +382,9 @@ function HampiEscapadePage() {
               <MagneticButton>
                 <Button
                   asChild
-                  className="h-12 rounded-full bg-[#fff7ea] px-6 text-sm font-bold text-[#201c17] hover:bg-white"
+                  className="h-12 rounded-full bg-[#fdf6ec] px-6 text-sm font-bold text-[#1c1814] hover:bg-white"
                 >
-                  <a href="/booking/treasures-of-karnataka">
+                  <a href="/booking/isha-ooty">
                     Reserve Your Seat
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -374,8 +394,8 @@ function HampiEscapadePage() {
 
               <MagneticButton>
                 <a
-                  href="https://wa.me/916281392007"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-black/20 px-6 text-sm font-semibold text-[#fff7ea] backdrop-blur-sm"
+                  href="https://wa.me/919705051052"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 bg-black/20 px-6 text-sm font-semibold text-[#fdf6ec] backdrop-blur-sm"
                 >
                   WhatsApp Us
                 </a>
@@ -385,11 +405,11 @@ function HampiEscapadePage() {
 
 
           <div ref={heroStatsRef} className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            <GlassStat icon={Clock} label="Duration" value="2D / 1N" />
+            <GlassStat icon={Clock} label="Duration" value="2N / 3D" />
             <GlassStat icon={Mountain} label="Difficulty" value="Easy" />
-            <GlassStat icon={Users} label="Min Group" value="10 Adults" />
-            <GlassStat icon={Compass} label="Trip Style" value="Heritage + Nature" />
-            <GlassStat icon={Calendar} label="Departure" value="Every Friday" />
+            <GlassStat icon={Users} label="Group Size" value="Open Group" />
+            <GlassStat icon={Compass} label="Trip Style" value="Spiritual + Hills" />
+            <GlassStat icon={Calendar} label="Departure" value="Thu & Fri, 7 PM" />
           </div>
         </div>
       </section>
@@ -398,28 +418,28 @@ function HampiEscapadePage() {
       {/* ── INCLUDES + ROUTE OVERVIEW ── */}
       <section className="mx-auto max-w-7xl px-4 py-10 md:px-8">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-[32px] border border-[#ddd1c0] bg-[#fbf7f1] p-6 md:p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8f7f6b]">
+          <div className="rounded-[32px] border border-[#d8cfc4] bg-[#faf7f3] p-6 md:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7a6e60]">
               Route overview
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-[#201c17] md:text-5xl">
-              City lights out, ruins in.
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-[#1c1814] md:text-5xl">
+              Ashram to highland, all in one weekend.
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#655949]">
-              Leave Hyderabad on a Friday night and wake up in one of the world's greatest archaeological
-              landscapes. Two full days of ancient temples, boulderscapes, and a lakeside coracle ride —
-              back by Monday morning.
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#524838]">
+              Board the overnight train from Kacheguda on Thursday, arrive in Mysore by morning,
+              and spend three days moving through Isha's sacred grounds, Coonoor's misty viewpoints,
+              and Ooty's pine-covered hills before the train brings you home.
             </p>
 
 
             <div className="mt-7 flex flex-wrap items-center gap-2">
               {routeStops.map((stop, idx) => (
                 <div key={stop} className="flex items-center gap-2">
-                  <span className="rounded-full border border-[#ded2c2] bg-[#f6f0e6] px-3 py-1.5 text-xs font-medium text-[#3c342b]">
+                  <span className="rounded-full border border-[#d0c6b8] bg-[#f3ede4] px-3 py-1.5 text-xs font-medium text-[#362c22]">
                     {stop}
                   </span>
                   {idx < routeStops.length - 1 ? (
-                    <span className="text-[#a4927e]">—</span>
+                    <span className="text-[#a09484]">—</span>
                   ) : null}
                 </div>
               ))}
@@ -435,15 +455,15 @@ function HampiEscapadePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="rounded-[24px] border border-[#ddd1c0] bg-[#fbf7f1] p-4"
+                className="rounded-[24px] border border-[#d8cfc4] bg-[#faf7f3] p-4"
               >
                 <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-full border border-[#e1d6c8] bg-[#f6f0e6] text-[#b08a57]">
+                  <span className="grid h-10 w-10 place-items-center rounded-full border border-[#d0c6b8] bg-[#f3ede4] text-[#8a6840]">
                     <Check className="h-4 w-4" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-[#201c17]">{item}</p>
-                    <p className="text-xs text-[#7c6f61]">Included in the package</p>
+                    <p className="text-sm font-semibold text-[#1c1814]">{item}</p>
+                    <p className="text-xs text-[#6c6050]">Included in the package</p>
                   </div>
                 </div>
               </motion.div>
@@ -457,19 +477,19 @@ function HampiEscapadePage() {
       <section ref={imagePanelRef} className="mx-auto max-w-7xl px-4 py-6 md:px-8">
         <div className="grid gap-5 md:grid-cols-3">
           <DestinationCard
-            title="Sanapur Lake"
-            subtitle="Coracle rides, boulder reflections, and the best possible morning in Hampi."
-            image={hampiRiver}
+            title="Isha Yoga Centre"
+            subtitle="Adiyogi's towering face at dusk, the evening aarti, and the stillness of the ashram grounds."
+            image={ishaAshram}
           />
           <DestinationCard
-            title="Anegundi & Anjanadri"
-            subtitle="Ancient fort viewpoints and the sacred hill of Lord Hanuman's birthplace."
-            image={hampiRuins}
+            title="Coonoor & Toy Train"
+            subtitle="Dolphin's Nose overhang, Nilgiri tea estates, and a UNESCO mountain railway to Ooty."
+            image={coonoorTrain}
           />
           <DestinationCard
-            title="Hampi Temples"
-            subtitle="Stone chariots on the ₹50 note, Virupaksha's quiet sanctum, and Vijayanagara grandeur."
-            image={hampiTemple}
+            title="Ooty Highlands"
+            subtitle="Pine forests, Needle Rock, and the Bandipur wildlife corridor on the way home."
+            image={ootyPine}
           />
         </div>
       </section>
@@ -481,15 +501,15 @@ function HampiEscapadePage() {
         className="relative mx-auto mt-20 max-w-7xl px-4 pb-28 md:px-8"
       >
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#8d7d68]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#7a6e60]">
             Journey plan
           </p>
-          <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#201c17] md:text-5xl">
-            Friday night to Sunday evening
+          <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#1c1814] md:text-5xl">
+            Thursday evening to Sunday morning
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#6c6053] md:text-[15px]">
-            Three days woven into a single, unhurried story — from the overnight bus out of Hyderabad
-            to the last golden hour at Hemakuta Hill.
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#5a4c3c] md:text-[15px]">
+            Four days from the overnight train out of Kacheguda to the last pine forest
+            before the return journey pulls into Hyderabad at 5:40 AM.
           </p>
         </div>
 
@@ -497,25 +517,25 @@ function HampiEscapadePage() {
         <div className="relative mx-auto max-w-6xl">
 
 
-          {/* SVG timeline path + bus */}
+          {/* SVG timeline path + train */}
           <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-75 -translate-x-1/2 lg:block">
             <svg
               className="absolute left-1/2 top-0 h-full w-65 -translate-x-1/2 overflow-visible"
-              viewBox="0 0 260 1400"
+              viewBox="0 0 260 1900"
               fill="none"
               preserveAspectRatio="none"
             >
               <path
                 ref={timelinePathRef}
-                d="M130 20 C 42 130, 42 260, 130 360 C 218 460, 218 590, 130 690 C 42 790, 60 980, 130 1100 C 155 1180, 145 1280, 130 1360"
-                stroke="#d8c8b3"
+                d="M130 20 C 42 130, 42 280, 130 400 C 218 520, 218 670, 130 790 C 42 910, 42 1060, 130 1180 C 218 1300, 218 1500, 130 1620 C 80 1700, 110 1800, 130 1860"
+                stroke="#d0c4b4"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
               <path
                 ref={timelinePathProgressRef}
-                d="M130 20 C 42 130, 42 260, 130 360 C 218 460, 218 590, 130 690 C 42 790, 60 980, 130 1100 C 155 1180, 145 1280, 130 1360"
-                stroke="#b08a57"
+                d="M130 20 C 42 130, 42 280, 130 400 C 218 520, 218 670, 130 790 C 42 910, 42 1060, 130 1180 C 218 1300, 218 1500, 130 1620 C 80 1700, 110 1800, 130 1860"
+                stroke="#8a6840"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -524,9 +544,9 @@ function HampiEscapadePage() {
 
             <div
               ref={busIndicatorRef}
-              className="absolute left-1/2 top-0 z-20 hidden h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-[#d6c7b5] bg-[#fbf7f1] text-[#7a5d39] shadow-[0_10px_30px_rgba(73,53,27,0.10)] lg:flex"
+              className="absolute left-1/2 top-0 z-20 hidden h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-[#d0c4b4] bg-[#faf7f3] text-[#6a5030] shadow-[0_10px_30px_rgba(70,48,20,0.10)] lg:flex"
             >
-              <BusFront className="h-5 w-5" />
+              <Train className="h-5 w-5" />
             </div>
           </div>
 
@@ -548,8 +568,8 @@ function HampiEscapadePage() {
                     <article
                       className={`overflow-hidden rounded-[30px] border transition-all duration-500 ${
                         isActive
-                          ? "border-[#d0b892] bg-[#fbf7f1] shadow-[0_18px_50px_rgba(69,49,22,0.10)]"
-                          : "border-[#ddd1c0] bg-[#fbf7f1]"
+                          ? "border-[#c8aa80] bg-[#faf7f3] shadow-[0_18px_50px_rgba(70,48,20,0.10)]"
+                          : "border-[#d8cfc4] bg-[#faf7f3]"
                       }`}
                     >
                       <div className="relative aspect-video overflow-hidden">
@@ -559,12 +579,12 @@ function HampiEscapadePage() {
                           className="h-full w-full object-cover"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,18,14,0.02),rgba(24,18,14,0.12)_52%,rgba(24,18,14,0.46)_100%)]" />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,12,8,0.02),rgba(16,12,8,0.12)_52%,rgba(16,12,8,0.46)_100%)]" />
                         <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2 md:left-5 md:top-5">
-                          <span className="inline-flex rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b3128] backdrop-blur-sm">
+                          <span className="inline-flex rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2e2418] backdrop-blur-sm">
                             {item.day}
                           </span>
-                          <span className="inline-flex rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b3128] backdrop-blur-sm">
+                          <span className="inline-flex rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2e2418] backdrop-blur-sm">
                             {item.meals}
                           </span>
                         </div>
@@ -572,29 +592,29 @@ function HampiEscapadePage() {
 
 
                       <div className="px-5 py-5 md:px-7 md:py-7">
-                        <h3 className="text-2xl font-black tracking-[-0.03em] text-[#201c17] md:text-3xl">
+                        <h3 className="text-2xl font-black tracking-[-0.03em] text-[#1c1814] md:text-3xl">
                           {item.title}
                         </h3>
-                        <p className="mt-2 text-sm leading-7 text-[#645849]">{item.subtitle}</p>
+                        <p className="mt-2 text-sm leading-7 text-[#524838]">{item.subtitle}</p>
 
 
                         <ul className="mt-6 space-y-3">
                           {item.points.map((point) => (
-                            <li key={point} className="flex gap-3 text-sm leading-6 text-[#5c5047]">
-                              <span className="mt-2.75 h-1.25 w-1.25 shrink-0 rounded-full bg-[#b08a57]" />
+                            <li key={point} className="flex gap-3 text-sm leading-6 text-[#4a4030]">
+                              <span className="mt-2.75 h-1.25 w-1.25 shrink-0 rounded-full bg-[#8a6840]" />
                               <span>{point}</span>
                             </li>
                           ))}
                         </ul>
 
 
-                        <div className="mt-6 rounded-[22px] border border-[#e1d5c5] bg-[#f8f2e9] p-4">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8b7b68]">
+                        <div className="mt-6 rounded-[22px] border border-[#d0c6b8] bg-[#f3ede4] p-4">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7a6e5c]">
                             Notes
                           </p>
                           <div className="mt-3 space-y-2">
                             {item.notes.map((note) => (
-                              <p key={note} className="text-xs leading-6 text-[#6b5e50]">
+                              <p key={note} className="text-xs leading-6 text-[#5c5040]">
                                 — {note}
                               </p>
                             ))}
@@ -607,11 +627,11 @@ function HampiEscapadePage() {
 
                   <div className="relative hidden h-full lg:block">
                     <div
-                      className={`absolute top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-[#d5c6b4] bg-[#fbf7f1] text-[#8a6941] shadow-[0_8px_24px_rgba(80,58,28,0.10)] ${
+                      className={`absolute top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-[#ccc0b0] bg-[#faf7f3] text-[#6a5030] shadow-[0_8px_24px_rgba(70,48,20,0.10)] ${
                         isLeft ? "-left-7" : "-right-7"
                       }`}
                     >
-                      <BusFront className="h-5 w-5" />
+                      <Train className="h-5 w-5" />
                     </div>
                   </div>
                 </div>
@@ -626,64 +646,70 @@ function HampiEscapadePage() {
       <section ref={notesSectionRef} className="mx-auto max-w-7xl px-4 pb-24 md:px-8">
         <div className="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
 
+
           {/* Important Notes */}
-          <div className="soft-reveal rounded-[30px] border border-[#ddd1c0] bg-[#fbf7f1] p-6 md:p-7">
-            <h2 className="inline-flex items-center gap-2 text-2xl font-black tracking-[-0.03em] text-[#201c17]">
-              <HeartPulse className="h-5 w-5 text-[#b08a57]" />
+          <div className="soft-reveal rounded-[30px] border border-[#d8cfc4] bg-[#faf7f3] p-6 md:p-7">
+            <h2 className="inline-flex items-center gap-2 text-2xl font-black tracking-[-0.03em] text-[#1c1814]">
+              <HeartPulse className="h-5 w-5 text-[#8a6840]" />
               Important Notes
             </h2>
 
-            <ul className="mt-5 space-y-3 text-sm leading-7 text-[#645949]">
-              <li>— Trip departs every Friday at ~10 PM from Hyderabad; returns by Monday morning.</li>
-              <li>— Minimum 10 travellers required to confirm the trip.</li>
-              <li>— Advance of ₹1,000 per adult is required to reserve; full payment applies for bookings made within 1 day of departure.</li>
-              <li>— Entry fees for monuments, coracle rides, and other activities are not included.</li>
-              <li>— Stays are on a sharing basis; room upgrades are available at an additional cost.</li>
-              <li>— Modest clothing is required for all temple visits.</li>
-              <li>— Rates may vary during peak season (Diwali, Christmas, New Year).</li>
+
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-[#524838]">
+              <li>— Trip departs every Thursday and Friday at 7:00 PM from Kacheguda Railway Station.</li>
+              <li>— This is a budget trip — comfort and cooperation from all travellers is appreciated.</li>
+              <li>— Trip host holds the right to alter route, timings, or activities based on safety and conditions.</li>
+              <li>— Food expenses, entry tickets, and toy train fares are not included in the package.</li>
+              <li>— Modest clothing is mandatory at the Isha Yoga Centre — no shorts or sleeveless tops.</li>
+              <li>— A one-way surcharge of ₹400–500 may apply depending on train availability.</li>
+              <li>— Travloger is not responsible for loss of valuables — avoid carrying gold, gadgets, or expensive items.</li>
+              <li>— GST of 5% is applicable on the total package price.</li>
             </ul>
           </div>
 
+
           {/* Booking CTA */}
-          <div className="soft-reveal relative overflow-hidden rounded-[30px] border border-[#ddd1c0] bg-[#201c17] p-6 md:p-8">
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#b08a57]/10 blur-3xl" />
+          <div className="soft-reveal relative overflow-hidden rounded-[30px] border border-[#d8cfc4] bg-[#1c1814] p-6 md:p-8">
+            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#8a6840]/10 blur-3xl" />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-xl">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#d7c5ae]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#c8aa80]">
                   Booking
                 </p>
-                <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#f6efe5]">
-                  Escape for the weekend, return with a story.
+                <h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-[#fdf6ec]">
+                  Ashram at dusk, pine forests at dawn. Every Thursday.
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-[#d1c1ad]">
-                  Travloger handles the essentials — vehicle, stay, trip leader, and a local guide
-                  to bring Hampi's heritage to life.
+                <p className="mt-4 text-sm leading-7 text-[#b09878]">
+                  Travloger handles the train, the tempo, the stay, and the host —
+                  you just show up at Kacheguda with an open heart.
                 </p>
-                <p className="mt-3 text-xs text-[#a08878]">
+                <p className="mt-3 text-xs text-[#887060]">
                   <a
                     href="mailto:info@travloger.in"
-                    className="hover:text-[#d1c1ad] transition-colors"
+                    className="hover:text-[#c8aa80] transition-colors"
                   >
                     info@travloger.in
                   </a>{" "}
-                  · +91 62813 92007 · travloger.in
+                  · +91 97050 51052 · travloger.in
                 </p>
               </div>
+
 
               <div className="flex flex-wrap gap-3">
                 <MagneticButton>
                   <Button
                     asChild
-                    className="h-12 rounded-full bg-[#f1e4d0] px-6 text-sm font-bold text-[#1e1913] hover:bg-[#eadbc2]"
+                    className="h-12 rounded-full bg-[#f3e8d4] px-6 text-sm font-bold text-[#180e06] hover:bg-[#ecdfc8]"
                   >
-                    <a href="/booking/treasures-of-karnataka">Book Now</a>
+                    <a href="/booking/isha-ooty">Book Now</a>
                   </Button>
                 </MagneticButton>
 
+
                 <MagneticButton>
                   <a
-                    href="https://wa.me/916281392007"
-                    className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-semibold text-[#f5ece1]"
+                    href="https://wa.me/919705051052"
+                    className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-semibold text-[#fdf6ec]"
                   >
                     WhatsApp
                   </a>
@@ -692,15 +718,16 @@ function HampiEscapadePage() {
             </div>
           </div>
 
+
         </div>
       </section>
 
 
       {/* ── FOOTER ── */}
-      <section className="border-t border-[#ded1c0]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs text-[#7e705f] md:flex-row md:items-center md:justify-between md:px-8">
-          <p>Travloger India · Hampi Escapade</p>
-          <p>Hyderabad — Hampi — Hyderabad · Every Friday</p>
+      <section className="border-t border-[#d0c6b8]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs text-[#7a6e60] md:flex-row md:items-center md:justify-between md:px-8">
+          <p>Travloger India · Isha & Ooty</p>
+          <p>Hyderabad — Mysore — Isha — Coonoor — Ooty — Hyderabad · Every Thu & Fri</p>
         </div>
       </section>
     </div>
@@ -721,16 +748,16 @@ function DestinationCard({
   image: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-[28px] border border-[#ddd1c0] bg-[#fbf7f1]">
+    <div className="overflow-hidden rounded-[28px] border border-[#d8cfc4] bg-[#faf7f3]">
       <div className="aspect-4/3 overflow-hidden">
         <img src={image} alt={title} className="h-full w-full object-cover" loading="lazy" />
       </div>
       <div className="p-5">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8b7b67]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7a6e60]">
           Destination
         </p>
-        <h3 className="mt-2 text-2xl font-black tracking-[-0.03em] text-[#201c17]">{title}</h3>
-        <p className="mt-2 text-sm leading-7 text-[#655949]">{subtitle}</p>
+        <h3 className="mt-2 text-2xl font-black tracking-[-0.03em] text-[#1c1814]">{title}</h3>
+        <p className="mt-2 text-sm leading-7 text-[#524838]">{subtitle}</p>
       </div>
     </div>
   );
@@ -750,13 +777,13 @@ function GlassStat({
     <motion.div
       whileHover={{ y: -3 }}
       transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-      className="rounded-[22px] border border-[#ded3c4] bg-[#fbf7f1]/90 p-4"
+      className="rounded-[22px] border border-[#d0c6b8] bg-[#faf7f3]/90 p-4"
     >
-      <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7e715f]">
-        <Icon className="h-4 w-4 text-[#b08a57]" />
+      <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6c6050]">
+        <Icon className="h-4 w-4 text-[#8a6840]" />
         {label}
       </p>
-      <p className="mt-2 text-sm font-bold text-[#201c17]">{value}</p>
+      <p className="mt-2 text-sm font-bold text-[#1c1814]">{value}</p>
     </motion.div>
   );
 }

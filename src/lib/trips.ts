@@ -16,6 +16,8 @@ import pondicherry from "@/assets/Pondicherry_Beach.jpg";
 import arunachalam from "@/assets/Arunachalam.jpeg";
 import lonavala from "@/assets/Lonavala_Hill_Station.jpg";
 import rajmachi from "@/assets/Rajmachi_Visapur.jpg";
+import kaluWaterfalls from "@/assets/Kalu_Waterfalls.jpg";
+import harishchandragad from "@/assets/Harishchandragad.jpg";
 import andharban from "@/assets/Andharban.jpeg";
 import rajasthan from "@/assets/Rajasthan_Desert.jpg";
 import sikkim from "@/assets/Sikkim.jpg";
@@ -437,6 +439,55 @@ export const trips: Trip[] = [
     departures: [
       { date: "16 May 2026", spotsLeft: 8 },
       { date: "30 May 2026", spotsLeft: 12 },
+    ],
+  },
+  {
+    slug: "kallu_falls_harishchandragad",
+    title: "Kalu Waterfalls & Harishchandragad",
+    location: "Maharashtra",
+    country: "India",
+    image: kaluWaterfalls,
+    gallery: [kaluWaterfalls, harishchandragad, rajmachi],
+    durationDays: 2,
+    durationNights: 1,
+    price: 6999,
+    rating: 4.7,
+    reviews: 186,
+    groupSize: "12–20",
+    difficulty: "Moderate",
+    category: "weekend",
+    departureCities: ["Mumbai", "Pune"],
+    pickup: "Kasara / Pune pickup point",
+    drop: "Kasara / Pune drop point",
+    months: ["Jun", "Jul", "Aug", "Sep"],
+    tagline: "A monsoon trek of giant falls, forest trails, and fort ridgelines",
+    description:
+      "A rugged Sahyadri weekend that combines the raw force of Kalu Waterfalls with the dramatic cliffs, caves, and plateau stretches of Harishchandragad.",
+    highlights: [
+      "Kalu Waterfalls approach trek",
+      "Harishchandragad fort terrain",
+      "Monsoon forest sections",
+      "Caves, ridgelines, and panoramic valley views",
+    ],
+    inclusions: ["1 night stay/camp", "Meals", "Local transport", "Trek leader", "Basic first aid"],
+    exclusions: ["Personal trekking gear", "Snacks en route", "Any forest or monument fee not listed"],
+    itinerary: [
+      {
+        day: 1,
+        title: "Departure and Kalu Waterfalls section",
+        details:
+          "Start from Mumbai or Pune, travel toward the base region, and begin the monsoon trail toward Kalu Waterfalls through dense forest and wet terrain.",
+      },
+      {
+        day: 2,
+        title: "Harishchandragad exploration and return",
+        details:
+          "Continue across the fort section with plateau stretches, cave points, and broad valley views before descending and returning by night.",
+      },
+    ],
+    departures: [
+      { date: "19 Jul 2026", spotsLeft: 9 },
+      { date: "02 Aug 2026", spotsLeft: 13 },
     ],
   },
   {
@@ -998,6 +1049,20 @@ export const trips: Trip[] = [
 ];
 
 export const getTrip = (slug: string) => trips.find((t) => t.slug === slug);
+
+const tripDetailPaths = {
+  araku: "/trips/araku",
+  "arunachalam-pondicherry": "/trips/Arunachalam_Pondicherry",
+  kallu_falls_harishchandragad: "/trips/kallu_falls_harishchandragad",
+  "ooty-coonoor": "/trips/ooty_and_coonoor",
+  "treasures-of-karnataka": "/trips/treasures-of-karnataka",
+  wayanad: "/trips/wayanad",
+} as const;
+
+export type TripDetailPath = (typeof tripDetailPaths)[keyof typeof tripDetailPaths];
+
+export const getTripDetailHref = (slug: string): TripDetailPath | null =>
+  tripDetailPaths[slug as keyof typeof tripDetailPaths] ?? null;
 
 export const testimonials = [
   {

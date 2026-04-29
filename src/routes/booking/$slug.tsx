@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Check, ChevronLeft, ChevronRight, Tag, ShieldCheck, CreditCard, Lock } from "lucide-react";
-import { getTrip, type Trip } from "@/lib/trips";
+import { getTrip, getTripDetailHref, type Trip } from "@/lib/trips";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,6 +28,7 @@ function BookingPage() {
   const { trip } = Route.useLoaderData() as { trip: Trip };
   const search = Route.useSearch();
   const navigate = useNavigate();
+  const tripHref = getTripDetailHref(trip.slug);
 
   const [step, setStep] = useState(0);
   const [travellers, setTravellers] = useState(1);
@@ -80,9 +81,9 @@ function BookingPage() {
   return (
     <div className="bg-linear-to-b from-primary-soft/40 to-background">
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-8 md:py-14">
-        <Link to="/trips/$slug" params={{ slug: trip.slug }} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
-          <ChevronLeft className="h-4 w-4" /> Back to trip
-        </Link>
+        <a href={tripHref ?? "/trips"} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
+          <ChevronLeft className="h-4 w-4" /> {tripHref ? "Back to trip" : "Back to all trips"}
+        </a>
         <h1 className="mt-3 font-display text-3xl font-extrabold sm:text-4xl">Book your spot</h1>
         <p className="text-sm text-muted-foreground">{trip.title}</p>
 

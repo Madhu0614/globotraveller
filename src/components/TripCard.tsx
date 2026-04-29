@@ -1,10 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Star, Calendar, Clock, MapPin } from "lucide-react";
-import type { Trip } from "@/lib/trips";
+import { getTripDetailHref, type Trip } from "@/lib/trips";
 import { Button } from "@/components/ui/button";
 
 export function TripCard({ trip }: { trip: Trip }) {
   const next = trip.departures[0];
+  const tripHref = getTripDetailHref(trip.slug) ?? `/booking/${trip.slug}`;
+  const ctaLabel = getTripDetailHref(trip.slug) ? "View" : "Book";
+
   return (
     <article className="group overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:shadow-brand">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -69,9 +72,7 @@ export function TripCard({ trip }: { trip: Trip }) {
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">per person</span>
           </div>
           <Button asChild size="sm" className="rounded-full">
-            <Link to="/trips/$slug" params={{ slug: trip.slug }}>
-              View
-            </Link>
+            <a href={tripHref}>{ctaLabel}</a>
           </Button>
         </div>
       </div>
